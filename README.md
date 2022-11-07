@@ -7,7 +7,7 @@
 - You can see the different services that the CRS provides.
 - As a client, you can enroll your car into our CRS system.
 
-## Team members
+## Team members of C.A.R
 
 - Rupesh Ghimire
 - Alex Aguilar
