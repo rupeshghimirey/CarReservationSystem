@@ -13,7 +13,6 @@
 - Alex Aguilar
 - Chongwei Ma
 
-## Hours of the Store
+## Car Rental Reservation Process
 
-
-![image](./image/threading.jpg)
+![image](./images/carDiagram.png)
