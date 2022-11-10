@@ -16,3 +16,8 @@
 ## Car Rental Reservation Process
 
 ![image](./images/carDiagram.png)
+
+## MVP
+- As a user, I want to view the vehicles available.
+- As a user, I want to reserve a vehicle with a start and stop date.
+- As a user, I want to view the invoice/bill.
