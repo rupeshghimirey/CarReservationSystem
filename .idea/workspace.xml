@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8243135-6524-460c-abe4-316bd25eb2d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/crs/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarReservationSystem.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/client/CRSClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/crs/datahub/CarInventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/crs/exceptions/InvalidArgumentExceptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/crs/models/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/crs/models/CarType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/crs/CarType.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,5 +62,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1st trial" />
+    <option name="LAST_COMMIT_MESSAGE" value="1st trial" />
   </component>
 </project>
