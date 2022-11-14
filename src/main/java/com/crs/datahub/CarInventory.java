@@ -76,9 +76,11 @@ public class CarInventory implements ICarInventory {
     public Map<String, Car> reserveCar(String vin) {
         Map<String, Car> carMap = new HashMap<>();
         Car car = findByVin(vin);
+        car.setReserved(true);
         carMap.put(vin, car);
-//        Map<String, Car> carMap = carCollections.stream()
-//                .collect(Collectors.toMap())
+        System.out.println(carMap);
         return carMap;
     }
+
+
 }

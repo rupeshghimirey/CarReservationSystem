@@ -5,6 +5,8 @@ import com.crs.customer.CreditCard;
 import com.crs.customer.Customer;
 import com.crs.customer.IPayment;
 import com.crs.datahub.CarInventory;
+import com.crs.datahub.ICarInventory;
+import com.crs.datahub.ReservedPeriods;
 import com.crs.models.Car;
 import com.crs.models.CarType;
 import com.crs.models.UserInterface;
@@ -17,12 +19,13 @@ import java.util.stream.Collectors;
 
 public class CRSClient {
     private UserInterface userInterface;
-
     private Customer customer;
+
 
     public CRSClient(UserInterface userInterface) {
         this.userInterface = userInterface;
-        this.customer = customer;
+        //this.customer = customer;
+
     }
 
     public static void main(String[] args) {
@@ -51,7 +54,29 @@ public class CRSClient {
                         System.out.println("Your current Balance is: " + customer1.getBalance());
                         isSubMenu2Choice = false;
                     } else if (subMenu2Choice.equals("2")) {
-                        System.out.println("You have selected TWO!");
+                        //CarInventory carInventory = new CarInventory();
+                        //String userInputVinNumber = userInterface.askUserForVinNumber();
+                        //carInventory.reserveCar(userInputVinNumber);
+
+                        System.out.println("Please input the starting date");
+                        String startDate = userInterface.userInput();
+                        System.out.println("Please input the end date");
+                        String endDate = userInterface.userInput();
+
+                        ReservedPeriods newPeriod1 = userInterface.inputReservedPeriod(startDate, endDate);
+
+                        System.out.println(userInterface.getAvailableCars(newPeriod1));
+
+                        System.out.println("Please select the car index to reserve");
+                        String selectedCarIndex = userInterface.userInput();
+
+                        userInterface.selectCar(newPeriod1, selectedCarIndex);
+
+                        System.out.println("Reserve success");
+
+
+
+
                         isSubMenu2Choice = false;
 
                     } else if (subMenu2Choice.equals("3")) {

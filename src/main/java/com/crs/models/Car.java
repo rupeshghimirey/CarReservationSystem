@@ -1,5 +1,10 @@
 package com.crs.models;
 
+import com.crs.datahub.ReservedPeriods;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Car {
 
     private String vin;
@@ -11,6 +16,7 @@ public class Car {
     private double pricePerDay;
     private boolean isReserved;
 
+    private List<ReservedPeriods> periods = new ArrayList<>();
 
     public Car() {}
 
@@ -93,6 +99,28 @@ public class Car {
         isReserved = reserved;
     }
 
+    public List<ReservedPeriods> getPeriods() {
+        return periods;
+    }
+
+    public void inputPeriod(ReservedPeriods period) {
+        if(period == null) {
+            throw new IllegalArgumentException("NUll DATES");
+        }
+        if(period.getStartDate().after(period.getEndDate())) {
+            System.out.println("invalid input.");
+            return;
+        }
+        periods.add(period);
+    }
+
+    public void updatePeriod(ReservedPeriods period) {
+    }
+
+    public void removePeriod(ReservedPeriods period) {
+
+    }
+
     public static Car newInstance(String vin, String plateNumber, CarType carType, double price, String year, String make, String model) {
         Car car = new Car(vin, plateNumber, carType, year, make,price, model);
         return car;
@@ -108,6 +136,7 @@ public class Car {
                 "Year: " + getYear() + ", " +
                 "Make: " + getMake() + ", " +
                 "Model: " + getModel() + ", " +
-                "Vehicle Reserved: " + isReserved() + ".\n";
+                //"Vehicle Reserved: " + isReserved() +
+                ".\n";
     }
 }
