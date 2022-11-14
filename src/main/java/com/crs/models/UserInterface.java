@@ -36,6 +36,7 @@ public class UserInterface {
         System.out.println("(2) Option 2 \n");
         System.out.println("(3) Option 3 \n");
         System.out.println("(4) Option 4 \n");
+
         System.out.println("Please select either 1,2,3 or 4 \n");
 
         String choice = myScanner.nextLine();
