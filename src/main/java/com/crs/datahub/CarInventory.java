@@ -26,10 +26,4 @@ public class CarInventory {
         this.carCollections = carCollections;
     }
 
-
-
-//    CarInventory carInventory = new CarInventory();
-//            for(Car car: carInventory.getCarCollections()) {
-//        System.out.println(car);
-//    }
 }
