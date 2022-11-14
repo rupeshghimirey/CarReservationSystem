@@ -11,10 +11,10 @@ public class CarInventory {
 
     private List<Car> carCollections = new ArrayList<>(
             List.of(
-                    new Car("vin1", "WA98032", CarType.LUXURY, 109000.0, "2016", "Audi", "A3"),
-                    new Car("vin2", "WA98342", CarType.JEEP, 49000.0, "2017", "Ford", "JEEP"),
-                    new Car("vin3", "WA91232", CarType.SEDAN, 29000.0, "2018", "Honda", "Civic"),
-                    new Car("vin4", "WA98462", CarType.SPORTS, 109000.0, "2019", "Mitsubishi", "GTR")
+                    new Car("vin1", "WA98032", CarType.LUXURY,  "2016", "Audi",400.00, "A3"),
+                    new Car("vin2", "WA98342", CarType.JEEP,  "2017", "Ford",200.00, "JEEP"),
+                    new Car("vin3", "WA91232", CarType.SEDAN,  "2018", "Honda",100.00, "Civic"),
+                    new Car("vin4", "WA98462", CarType.SPORTS,  "2019", "Mitsubishi", 300.00,"GTR")
             )
     );
 

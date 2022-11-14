@@ -6,6 +6,7 @@ public class Customer {
     private String phoneNumber;
     private Address address;
     private IPayment payment;
+    private double balance;
 
     public Customer(String id, String name, String phoneNumber, Address address, IPayment payment) {
         this.id = id;

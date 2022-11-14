@@ -3,20 +3,14 @@ package com.crs.models;
 public class Car {
 
     private String vin;
-
     private String plateNumber;
-
     private CarType carType;
-
-    private double price;
-
     private String year;
-
     private String make;
-
     private String model;
-
+    private double pricePerDay;
     private boolean isReserved;
+
 
     public Car() {}
 
@@ -24,11 +18,11 @@ public class Car {
         setVin(vin);
     }
 
-    public Car(String vin, String plateNumber, CarType carType, double price, String year, String make, String model) {
+    public Car(String vin, String plateNumber, CarType carType,  String year, String make, double pricePerDay, String model) {
         this.vin = vin;
         this.plateNumber = plateNumber;
         this.carType = carType;
-        this.price = price;
+        this.pricePerDay = pricePerDay;
         this.year = year;
         this.make = make;
         this.model = model;
@@ -58,12 +52,12 @@ public class Car {
         this.carType = carType;
     }
 
-    public double getPrice() {
-        return price;
+    public double getPricePerDay() {
+        return pricePerDay;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPricePerDay(double pricePerDay) {
+        this.pricePerDay = pricePerDay;
     }
 
     public String getYear() {
@@ -109,7 +103,7 @@ public class Car {
         return  "Vin Number: " + getVin() + ", " +
                 "Plate Number: " + getPlateNumber() + ", " +
                 "Type: " + getCarType() + "， " +
-                "Price: " + getPrice() + ", " +
+                "Price: " + getPricePerDay() + ", " +
                 "Year: " + getYear() + ", " +
                 "Make: " + getMake() + ", " +
                 "Model: " + getModel() + ", " +
