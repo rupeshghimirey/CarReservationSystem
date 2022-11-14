@@ -24,10 +24,10 @@ public class CRSClient {
         String userInput = userInterface.printMainMenu();
 
         if(userInput.equalsIgnoreCase("1")) {
-            CarInventory carInventory = new CarInventory();
-            for(Car car: carInventory.getCarCollections()) {
-                System.out.println(car);
-            }
+            userInterface.getAllCars();
+        } else if(userInput.equalsIgnoreCase("2")) {
+            userInterface.printSubMenuOfTwo();
+            System.out.println("This is the submenu 2");
         }
     }
 }

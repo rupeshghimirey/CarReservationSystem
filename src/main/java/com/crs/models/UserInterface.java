@@ -1,9 +1,12 @@
 package com.crs.models;
 
+import com.crs.datahub.CarInventory;
+
 import java.util.Scanner;
 
 public class UserInterface {
     private Scanner myScanner;
+    CarInventory carInventory = new CarInventory();
 
     public UserInterface() {
         myScanner = new Scanner(System.in);
@@ -17,9 +20,20 @@ public class UserInterface {
         System.out.println("(1) Car Inventory");
         System.out.println("(2) Reserve");
         System.out.println("(3) Exit");
-    //Test
         System.out.println("Please enter 1, 2 or 3 only!\n");
         String choice = myScanner.nextLine();
         return  choice;
+    }
+
+    public void getAllCars() {
+        for(Car car: carInventory.getCarCollections()) {
+            System.out.println(car);
+        }
+    }
+
+    public void printSubMenuOfTwo() {
+        System.out.println("Please select the vin number of the car from the following list!\n");
+
+
     }
 }

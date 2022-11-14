@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a60dd37-3ada-4085-8d55-884203c368b3" name="Default Changelist" comment="" />
+    <list default="true" id="0a60dd37-3ada-4085-8d55-884203c368b3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/client/CRSClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/CRSClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/crs/datahub/CarInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/crs/datahub/CarInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/crs/models/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/crs/models/UserInterface.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
