@@ -9,7 +9,7 @@ public class UserInterface {
         myScanner = new Scanner(System.in);
         this.myScanner = myScanner;
     }
-
+    // main menu
     public String printMainMenu() {
         System.out.println("\n***************************************");
         System.out.println("Welcome to Car Reservation System (CRS)");
