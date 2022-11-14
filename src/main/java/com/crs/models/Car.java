@@ -23,6 +23,7 @@ public class Car {
     public Car(String vin) {
         setVin(vin);
     }
+
     public Car(String vin, String plateNumber, CarType carType, double price, String year, String make, String model) {
         this.vin = vin;
         this.plateNumber = plateNumber;
@@ -97,9 +98,21 @@ public class Car {
         isReserved = reserved;
     }
 
+    public static Car newInstance(String vin, String plateNumber, CarType carType, double price, String year, String make, String model) {
+        Car car = new Car(vin, plateNumber, carType, price, year, make, model);
+        return car;
+    }
+
     @Override
     public String toString() {
 
-        return null;
+        return  "Vin Number: " + getVin() + ", " +
+                "Plate Number: " + getPlateNumber() + ", " +
+                "Type: " + getCarType() + "， " +
+                "Price: " + getPrice() + ", " +
+                "Year: " + getYear() + ", " +
+                "Make: " + getMake() + ", " +
+                "Model: " + getModel() + ", " +
+                "Vehicle Reserved: " + isReserved() + ".\n";
     }
 }

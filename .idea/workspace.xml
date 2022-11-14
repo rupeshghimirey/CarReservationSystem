@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8243135-6524-460c-abe4-316bd25eb2d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarReservationSystem.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/client/CRSClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/crs/datahub/CarInventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/crs/exceptions/InvalidArgumentExceptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/crs/models/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/crs/models/CarType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/crs/CarType.java" beforeDir="false" />
+    <list default="true" id="f8243135-6524-460c-abe4-316bd25eb2d6" name="Changes" comment="1st trial">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarReservationSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CarReservationSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/client/CRSClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/CRSClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/crs/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/crs/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/crs/datahub/CarInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/crs/datahub/CarInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/crs/models/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/crs/models/Car.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +23,8 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -36,9 +37,87 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.crs.datahub" />
+      <recent name="com.crs.models" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CarInventoryTest">
+    <configuration name="CRSClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.client.CRSClient" />
+      <module name="CarReservationSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in CarReservationSystem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CarReservationSystem" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarInventoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CarReservationSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.crs.datahub.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.crs.datahub" />
+      <option name="MAIN_CLASS_NAME" value="com.crs.datahub.CarInventoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="CarReservationSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.crs.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.crs.models" />
+      <option name="MAIN_CLASS_NAME" value="com.crs.models.CarTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CarInventoryTest" />
+        <item itemvalue="JUnit.All in CarReservationSystem" />
+        <item itemvalue="Application.CRSClient" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -49,6 +128,14 @@
       <option name="presentableId" value="Default" />
       <updated>1667858026325</updated>
     </task>
+    <task id="LOCAL-00001" summary="1st trial">
+      <created>1668121548123</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668121548123</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

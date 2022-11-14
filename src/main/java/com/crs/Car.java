@@ -1,5 +1,7 @@
 package com.crs;
 
+import com.crs.models.CarType;
+
 import java.util.Date;
 
 public class Car {
