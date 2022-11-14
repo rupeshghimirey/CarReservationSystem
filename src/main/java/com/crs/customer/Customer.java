@@ -6,6 +6,7 @@ public class Customer {
     private String phoneNumber;
     private Address address;
     private IPayment payment;
+    private double balance = 1000;
 
     public Customer(String id, String name, String phoneNumber, Address address, IPayment payment) {
         this.id = id;
@@ -41,6 +42,14 @@ public class Customer {
 
     public Address getAddress() {
         return address;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     public void setAddress(Address address) {

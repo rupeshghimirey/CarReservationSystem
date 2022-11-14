@@ -18,7 +18,7 @@ public class UserInterface {
         System.out.println("Welcome to Car Reservation System (CRS)");
         System.out.println("***************************************");
         System.out.println("(1) Car Inventory");
-        System.out.println("(2) Reserve");
+        System.out.println("(2) Reserve Car");
         System.out.println("(3) Exit");
         System.out.println("Please enter 1, 2 or 3 only!\n");
         String choice = myScanner.nextLine();
@@ -31,9 +31,16 @@ public class UserInterface {
         }
     }
 
-    public void printSubMenuOfTwo() {
-        System.out.println("Please select the vin number of the car from the following list!\n");
+    public String printSubMenuOfTwo() {
+        System.out.println("(1) Balance \n");
+        System.out.println("(2) Select Car \n");
+        System.out.println("(3) Option 3 \n");
+        System.out.println("(4) Option 4 \n");
 
+        System.out.println("Please select either 1,2,3 or 4 \n");
+
+        String choice = myScanner.nextLine();
+        return choice;
 
     }
 }
