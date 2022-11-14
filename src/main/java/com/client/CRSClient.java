@@ -1,6 +1,7 @@
 package com.client;
 
 import com.crs.customer.Address;
+import com.crs.customer.CreditCard;
 import com.crs.customer.Customer;
 import com.crs.customer.IPayment;
 import com.crs.datahub.CarInventory;
@@ -29,7 +30,8 @@ public class CRSClient {
         boolean isMenuRunning = true;
         UserInterface userInterface = new UserInterface();
         Customer customer1 = new Customer("1", "Rupesh", "123-456-7891",
-                new Address("86 Boston Hbr", "Cameron", "NC", "28326"), new IPayment() {
+                new Address("86 Boston Hbr", "Cameron", "NC", "28326"),
+                new CreditCard("Rupesh", "1111 2222 3333 4444", "222", "10/45") {
             @Override
             public void pay() {
                 System.out.println("CC");

@@ -57,6 +57,7 @@ public class Car {
     }
 
     public void setPricePerDay(double pricePerDay) {
+
         this.pricePerDay = pricePerDay;
     }
 
