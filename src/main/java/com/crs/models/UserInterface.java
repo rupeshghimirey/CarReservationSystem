@@ -2,15 +2,16 @@ package com.crs.models;
 
 import com.crs.datahub.CarInventory;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class UserInterface {
     private Scanner myScanner;
     CarInventory carInventory = new CarInventory();
 
-    public UserInterface() {
+    public UserInterface() throws FileNotFoundException {
         myScanner = new Scanner(System.in);
-        this.myScanner = myScanner;
+
     }
     // main menu
     public String printMainMenu() {
@@ -26,7 +27,7 @@ public class UserInterface {
     }
 
     public void getAllCars() {
-        for(Car car: carInventory.getCarCollections()) {
+        for(Car car: carInventory.getCarCollections().values()) {
             System.out.println(car);
         }
     }
