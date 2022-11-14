@@ -10,6 +10,7 @@ public class Car {
     private String model;
     private double pricePerDay;
     private boolean isReserved;
+    private int initialQuantity;
 
 
     public Car() {}
@@ -18,7 +19,7 @@ public class Car {
         setVin(vin);
     }
 
-    public Car(String vin, String plateNumber, CarType carType,  String year, String make, double pricePerDay, String model) {
+    public Car(String vin, String plateNumber, CarType carType,  String year, String make, double pricePerDay, String model, int initialQuantity) {
         this.vin = vin;
         this.plateNumber = plateNumber;
         this.carType = carType;
@@ -26,6 +27,7 @@ public class Car {
         this.year = year;
         this.make = make;
         this.model = model;
+        this.initialQuantity = initialQuantity;
     }
 
     public String getVin() {
@@ -54,6 +56,14 @@ public class Car {
 
     public double getPricePerDay() {
         return pricePerDay;
+    }
+
+    public int getInitialQuantity() {
+        return initialQuantity;
+    }
+
+    public void setInitialQuantity(int initialQuantity) {
+        this.initialQuantity = initialQuantity;
     }
 
     public void setPricePerDay(double pricePerDay) {
@@ -92,8 +102,8 @@ public class Car {
         isReserved = reserved;
     }
 
-    public static Car newInstance(String vin, String plateNumber, CarType carType, double price, String year, String make, String model) {
-        Car car = new Car(vin, plateNumber, carType, year, make,price, model);
+    public static Car newInstance(String vin, String plateNumber, CarType carType, double price, String year, String make, String model, int initialQuantity) {
+        Car car = new Car(vin, plateNumber, carType, year, make,price, model, initialQuantity);
         return car;
     }
 
@@ -107,6 +117,7 @@ public class Car {
                 "Year: " + getYear() + ", " +
                 "Make: " + getMake() + ", " +
                 "Model: " + getModel() + ", " +
+                "Quantity: " + getInitialQuantity() +" ,"+
                 "Vehicle Reserved: " + isReserved() + ".\n";
     }
 }

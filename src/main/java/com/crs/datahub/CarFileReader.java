@@ -14,7 +14,7 @@ public class CarFileReader {
     private Scanner scanner;
     private File itemFile;
 
-    public Map<String, Car> loadCarInventory(int initialQuantity) throws FileNotFoundException {
+    public Map<String, Car> processCarInventory(int initialQuantity) throws FileNotFoundException {
 
         itemFile = new File("CRSFileSystem.csv");
         Map<String, Car> newMap = new TreeMap<>();
@@ -25,7 +25,7 @@ public class CarFileReader {
 
             String[] fields = line.split("\\|");
             Car item = new Car(fields[0], fields[1], CarType.valueOf(fields[2]), fields[3],
-                    fields[4], Double.parseDouble(fields[5]), fields[6]);
+                    fields[4], Double.parseDouble(fields[5]), fields[6], initialQuantity);
             newMap.put(fields[0], item);
         }
         return newMap;
