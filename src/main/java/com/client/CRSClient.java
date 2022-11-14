@@ -59,7 +59,6 @@ public class CRSClient {
                     } else if (subMenu2Choice.equals("4")) {
                         System.out.println("You have selected FOUR!");
                     }
-                    System.out.println("This is the submenu 2");
                 }
 
             } else if (userInput.equalsIgnoreCase("3")) {
