@@ -3,15 +3,31 @@ package com.client;
 import com.crs.datahub.CarInventory;
 import com.crs.models.Car;
 import com.crs.models.CarType;
+import com.crs.models.UserInterface;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class CRSClient {
-    public static void main(String[] args) {
-        CarInventory carInventory = new CarInventory();
+    private UserInterface userInterface;
 
+    public CRSClient(UserInterface userInterface) {
+        this.userInterface = userInterface;
+    }
+
+    public static void main(String[] args) {
+
+        UserInterface userInterface = new UserInterface();
+        String userInput = userInterface.printMainMenu();
+
+        if(userInput.equalsIgnoreCase("1")) {
+            CarInventory carInventory = new CarInventory();
+            for(Car car: carInventory.getCarCollections()) {
+                System.out.println(car);
+            }
+        }
     }
 }
