@@ -93,7 +93,7 @@ public class Car {
     }
 
     public static Car newInstance(String vin, String plateNumber, CarType carType, double price, String year, String make, String model) {
-        Car car = new Car(vin, plateNumber, carType, price, year, make, model);
+        Car car = new Car(vin, plateNumber, carType, year, make,price, model);
         return car;
     }
 
@@ -103,7 +103,7 @@ public class Car {
         return  "Vin Number: " + getVin() + ", " +
                 "Plate Number: " + getPlateNumber() + ", " +
                 "Type: " + getCarType() + "， " +
-                "Price: " + getPricePerDay() + ", " +
+                "Price/day: " + getPricePerDay() + ", " +
                 "Year: " + getYear() + ", " +
                 "Make: " + getMake() + ", " +
                 "Model: " + getModel() + ", " +

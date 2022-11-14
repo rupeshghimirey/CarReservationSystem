@@ -32,8 +32,8 @@ public class UserInterface {
     }
 
     public String printSubMenuOfTwo() {
-        System.out.println("(1) Option 1 \n");
-        System.out.println("(2) Option 2 \n");
+        System.out.println("(1) Balance \n");
+        System.out.println("(2) Select Car \n");
         System.out.println("(3) Option 3 \n");
         System.out.println("(4) Option 4 \n");
 
