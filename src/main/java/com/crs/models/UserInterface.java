@@ -17,7 +17,7 @@ public class UserInterface {
         System.out.println("(1) Car Inventory");
         System.out.println("(2) Reserve");
         System.out.println("(3) Exit");
-
+    //Test
         System.out.println("Please enter 1, 2 or 3 only!\n");
         String choice = myScanner.nextLine();
         return  choice;
