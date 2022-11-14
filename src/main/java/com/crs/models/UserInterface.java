@@ -43,4 +43,10 @@ public class UserInterface {
         return choice;
 
     }
+    public String askUserForVinNumber() {
+        System.out.println("Please choose the vin number from the list");
+        String choice = myScanner.nextLine();
+        return choice;
+
+    }
 }
