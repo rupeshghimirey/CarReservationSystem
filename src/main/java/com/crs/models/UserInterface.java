@@ -3,10 +3,9 @@ package com.crs.models;
 import com.crs.datahub.CarInventory;
 import com.crs.datahub.ReservedPeriods;
 
-import java.sql.Array;
+import java.io.FileNotFoundException;
 import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -15,7 +14,7 @@ public class UserInterface {
     private Scanner myScanner;
     CarInventory carInventory = new CarInventory();
 
-    public UserInterface() {
+    public UserInterface() throws FileNotFoundException {
         myScanner = new Scanner(System.in);
         //this.myScanner = myScanner;
     }

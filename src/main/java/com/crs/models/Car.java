@@ -135,8 +135,8 @@ public class Car {
                 "Price/day: " + getPricePerDay() + ", " +
                 "Year: " + getYear() + ", " +
                 "Make: " + getMake() + ", " +
-                "Model: " + getModel() + ", " +
+                "Model: " + getModel() +
                 //"Vehicle Reserved: " + isReserved() +
-                ".\n";
+                "\n";
     }
 }
