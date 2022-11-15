@@ -126,10 +126,4 @@ public class UserInterface {
 
         return newPeriod;
     }
-    public String askUserForVinNumber() {
-        System.out.println("Please choose the vin number from the list");
-        String choice = myScanner.nextLine();
-        return choice;
-
-    }
 }

@@ -65,17 +65,17 @@ public class CRSClient {
 
                         ReservedPeriods newPeriod1 = userInterface.inputReservedPeriod(startDate, endDate);
 
-                        System.out.println(userInterface.getAvailableCars(newPeriod1));
+                        int i = 0;
+                        for(Car c : userInterface.getAvailableCars(newPeriod1)) {
+                            System.out.println(++i + " " + c.toString());
+                        }
 
                         System.out.println("Please select the car index to reserve");
                         String selectedCarIndex = userInterface.userInput();
 
-                        userInterface.selectCar(newPeriod1, selectedCarIndex);
+                        Car c = userInterface.selectCar(newPeriod1, selectedCarIndex);
 
-                        System.out.println("Reserve success");
-
-
-
+                        System.out.println(c.getVin() + " " +c.getMake() + " "+ c.getModel() + " " + "Reserve succeed");
 
                         isSubMenu2Choice = false;
 
