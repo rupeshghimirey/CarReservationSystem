@@ -99,7 +99,7 @@ public class UserInterface {
         }
 
         Car car = availableCars.get(selectInt - 1);
-        car.inputPeriod(reservedPeriods);
+        //car.inputPeriod(reservedPeriods);
 
         return car;
     }

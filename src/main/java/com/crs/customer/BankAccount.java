@@ -14,7 +14,7 @@ public class BankAccount implements IPayment{
     }
 
     @Override
-    public void pay() {
+    public void pay(double charges) {
 
     }
 

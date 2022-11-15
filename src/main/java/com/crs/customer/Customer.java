@@ -1,16 +1,18 @@
 package com.crs.customer;
 
-public class Customer {
+public class Customer implements IPayment{
     private String id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String phoneNumber;
     private Address address;
     private IPayment payment;
-    private double balance = 1000;
+    private double balance = 1000.0;
 
-    public Customer(String id, String name, String phoneNumber, Address address, IPayment payment) {
+    public Customer(String id, String firstName, String lastName, String phoneNumber, Address address, IPayment payment) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.payment = payment;
@@ -24,13 +26,13 @@ public class Customer {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getFirstName() {return firstName;}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setFirstName(String firstName) {this.firstName = firstName;}
+
+    public String getLastName() {return lastName;}
+
+    public void setLastName(String lastName) {this.lastName = lastName;}
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -65,10 +67,15 @@ public class Customer {
     }
 
     @Override
+    public void pay(double charges) {
+
+    }
+
+    @Override
     public String toString() {
         return "Customer{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                ", name='" + firstName + " " + lastName + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", address=" + address +
                 ", payment=" + payment +

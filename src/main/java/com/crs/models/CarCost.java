@@ -1,36 +1,27 @@
 package com.crs.models;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CarCost {
-    final static int LUXURY_COST= 400;
-    final static int SPORTS_COST= 350;
-    final static int SUV_COST= 300;
-    final static int JEEP_COST= 250;
-    final static int VAN_COST= 200;
-    final static int SEDAN_COST= 100;
+    final static Map<CarType, Integer> costChart = new HashMap<>();
 
-    public static double totalPrice(CarType carType, int numberOfDays) {
-        double totalCost = 0.0;
-        if (carType.equals(CarType.LUXURY)){
-            totalCost = LUXURY_COST + numberOfDays;
-        }
-        else if (carType.equals(CarType.SPORTS)){
-            totalCost = SPORTS_COST + numberOfDays;
-        }
-        else if (carType.equals(CarType.SUV)){
-            totalCost = SUV_COST + numberOfDays;
-        }
-        else if (carType.equals(CarType.JEEP)){
-            totalCost = JEEP_COST + numberOfDays;
-        }
-        else if (carType.equals(CarType.VAN)){
-            totalCost = VAN_COST + numberOfDays;
-        }
-        else if (carType.equals(CarType.SEDAN)){
-            totalCost = SEDAN_COST + numberOfDays;
-        }
-        return totalCost;
+    private static void costInitialization() {
+        costChart.put(CarType.LUXURY, 400);
+        costChart.put(CarType.SPORTS, 350);
+        costChart.put(CarType.SUV, 300);
+        costChart.put(CarType.JEEP, 250);
+        costChart.put(CarType.VAN, 200);
+        costChart.put(CarType.SEDAN, 100);
     }
 
+    public static double totalCharge(Car car, long numberOfDays) {
+        costInitialization();
+
+        double totalCharge = 0.0;
+
+        totalCharge = costChart.get(car.getCarType()) * numberOfDays;
+
+        return totalCharge;
+    }
 }

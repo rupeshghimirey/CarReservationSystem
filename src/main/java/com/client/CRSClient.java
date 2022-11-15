@@ -6,6 +6,7 @@ import com.crs.customer.Customer;
 import com.crs.datahub.CarInventory;
 import com.crs.datahub.ReservedPeriods;
 import com.crs.models.Car;
+import com.crs.models.CarCost;
 import com.crs.models.UserInterface;
 import java.io.FileNotFoundException;
 
@@ -13,12 +14,9 @@ import java.io.FileNotFoundException;
 
 public class CRSClient {
     private UserInterface userInterface;
-//    private CarInventory carInventory;
 
     public CRSClient(UserInterface userInterface, CarInventory carInventory) throws FileNotFoundException {
         this.userInterface = userInterface;
-//        this.carInventory = carInventory;
-
     }
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -26,13 +24,10 @@ public class CRSClient {
 
         boolean isMenuRunning = true;
         UserInterface userInterface = new UserInterface();
-        Customer customer1 = new Customer("1", "Rupesh", "123-456-7891",
+        Customer customer1 = new Customer("1", "Rupesh", "Ghimire", "123-456-7891",
                 new Address("86 Boston Hbr", "Cameron", "NC", "28326"),
                 new CreditCard("Rupesh", "1111 2222 3333 4444", "222", "10/45") {
-            @Override
-            public void pay() {
-                System.out.println("CC");
-            }
+
         });
 
         while (isMenuRunning) {
@@ -47,6 +42,22 @@ public class CRSClient {
                     if (subMenu2Choice.equals("1")) {
                         System.out.println("Your current Balance is: " + customer1.getBalance());
                         System.out.println("(1) Add more Balance");
+
+                        String addMoreBalance = userInterface.userInput();
+                        if(addMoreBalance.equals("1")) {
+                            System.out.println("How much you want to put?");
+                            String addAmount = userInterface.userInput();
+
+                            try {
+                                customer1.setBalance(customer1.getBalance() + Double.parseDouble(addAmount));
+                                System.out.println("Success");
+                                System.out.println("New balance: $" + customer1.getBalance());
+                            }
+                            catch (IllegalArgumentException e) {
+                                System.out.println(e.getMessage() +"\nInvalid input");
+                            }
+                        }
+
                         System.out.println("(2) Previous Menu");
                         isSubMenu2Choice = false;
                     } else if (subMenu2Choice.equals("2")) {
@@ -56,6 +67,7 @@ public class CRSClient {
                         String endDate = userInterface.userInput();
 
                         ReservedPeriods newPeriod1 = userInterface.inputReservedPeriod(startDate, endDate);
+
                         int i = 0;
                         for(Car c : userInterface.getAvailableCars(newPeriod1)) {
                             System.out.println(++i + " " + c.toString());
@@ -79,13 +91,22 @@ public class CRSClient {
                         }
                         while(flag);
 
-                        if(carInventory.getCarCollections().size() >= Integer.parseInt(selectedCarIndex)) {
-                            Car c = userInterface.selectCar(newPeriod1, selectedCarIndex);
-                            System.out.println(c.getVin() + " " +c.getMake() + " "+ c.getModel() + " " + "Successfully Reserved!");
-                        } else {
-                            System.out.println("Please type the valid car index!");
+                        Car c = userInterface.selectCar(newPeriod1, selectedCarIndex);
+                        double charges = CarCost.totalCharge(c, newPeriod1.getTotalReservedDays());
 
+                        if(charges > customer1.getBalance()) {
+                            System.out.println("Not enough balance on " + customer1.getFirstName() + " " + customer1.getLastName() + " account!");
+                            System.out.println("Press 1 to add more balance.");
+                        } else {
+
+                            c.inputPeriod(newPeriod1);
+                            System.out.println(c.getVin() + " " +c.getMake() + " "+ c.getModel() + " " + "Successfully Reserved!");
+
+                            customer1.setBalance(customer1.getBalance() - charges);
+                            System.out.println(customer1.getFirstName() + " " + customer1.getLastName() + " is charged: $" + charges);
+                            System.out.println("Current balance: $" + customer1.getBalance());
                         }
+
                         isSubMenu2Choice = false;
 
                     } else if (subMenu2Choice.equals("3")) {
@@ -95,6 +116,7 @@ public class CRSClient {
                     } else if (subMenu2Choice.equals("4")) {
                         System.out.println("You have selected FOUR!");
                     }
+
                 }
 
             } else if (userInput.equalsIgnoreCase("3")) {

@@ -2,5 +2,5 @@ package com.crs.customer;
 
 public interface IPayment {
 
-    public void pay();
+    public void pay(double charges);
 }
