@@ -26,6 +26,7 @@ public class ReservedPeriods {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
+
     public long getTotalReservedDays() {
         var date1 = this.startDate.toLocalDate();
         var date2 = this.endDate.toLocalDate();
