@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class InvoiceReservation {
-    // creates newFile with log.txt
+    // creates newFile with invoice.txt
     File newFile = new File("invoice.txt");
     // prints out the output file
     PrintWriter writer;
