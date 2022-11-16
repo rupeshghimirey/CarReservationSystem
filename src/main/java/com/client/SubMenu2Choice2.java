@@ -8,7 +8,7 @@ import com.crs.models.Car;
 import com.crs.models.CarCost;
 
 public class SubMenu2Choice2 {
-    public static void subMenu2Choice2(Customer customer1) {
+    public static void subMenu2Choice2(Customer customer) {
         System.out.println("Please input the starting date");
         String startDate = GlobalVariable.userInterface.userInput();
         System.out.println("Please input the end date");
@@ -46,16 +46,16 @@ public class SubMenu2Choice2 {
 
         double charges = CarCost.totalCharge(c, newPeriod1.getTotalReservedDays());
 
-        if (charges > customer1.getBalance()) {
+        if (charges > customer.getBalance()) {
 
-            System.out.println("Not enough balance on " + customer1.getFirstName() + " " + customer1.getLastName() + " account!");
+            System.out.println("Not enough balance on " + customer.getFirstName() + " " + customer.getLastName() + " account!");
 
-            SubMenu2Choice1.subMenu2Choice1(customer1);
+            SubMenu2Choice1.subMenu2Choice1(customer);
 
         } else {
             c.inputPeriod(newPeriod1);
 
-            Invoice newInvoice = new Invoice(customer1,newPeriod1,c);
+            Invoice newInvoice = new Invoice(customer,newPeriod1,c);
             InvoiceList.addToInvoiceList(newInvoice);
 
             GlobalVariable.invoiceReservation.selectCar(newInvoice);
@@ -64,9 +64,10 @@ public class SubMenu2Choice2 {
 
             GlobalVariable.invoiceReservation.closeFile();
 
-            customer1.setBalance(customer1.getBalance() - charges);
-            System.out.println(customer1.getFirstName() + " " + customer1.getLastName() + " is charged with: $" + charges);
-            System.out.println("Current balance: $" + customer1.getBalance());
+            customer.setBalance(customer.getBalance() - charges);
+            System.out.println(customer.getFirstName() + " " + customer.getLastName() + " is charged with: $" + charges);
+            System.out.println("Current balance: $" + customer.getBalance());
         }
     }
 }
+

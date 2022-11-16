@@ -135,9 +135,10 @@ public class UserInterface {
         return newPeriod;
     }
     public Customer getCustomerInfo() {
-        return new Customer("1", "Rupesh", "Ghimire", "123-456-7891",
+        Customer customer = new Customer("1", "Rupesh", "Ghimire", "123-456-7891",
                 new Address("86 Boston Hbr", "Cameron", "NC", "28326"),
                 new CreditCard("Rupesh", "1111 2222 3333 4444", "222", "10/45") {});
+        return customer;
     }
     public void thankYouMessage() {
         System.out.println("Thank You for visiting CRS! See you again!");
