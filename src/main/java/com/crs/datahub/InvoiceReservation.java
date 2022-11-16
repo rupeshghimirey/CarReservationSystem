@@ -1,5 +1,7 @@
 package com.crs.datahub;
 
+import com.crs.models.CarCost;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -26,19 +28,25 @@ public class InvoiceReservation {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
         try {
             writer = new PrintWriter(newFile);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
     }
 
     // prints out in output file whenever this method is called in CRSClient
-    public void selectCar() {
-        writer.println(dateFormat.format(date) + " Car Reservation Done!");
+    public void selectCar(Invoice invoice) {
+        double charges = CarCost.totalCharge(invoice.getCar(), invoice.getReservedPeriods().getTotalReservedDays());
+
+        writer.println(dateFormat.format(date) + "\n" +
+                invoice.getCustomer().getFirstName() + ", " + invoice.getCustomer().getLastName() +
+                " has reserved a " + invoice.getCar().getMake() + " "+ invoice.getCar().getModel() +
+                "\n" + invoice.getReservedPeriods().toString() +
+                "\nTotal Charge is: " +charges +
+                "\n");
+                //+ "Car Reservation Done!");
     }
     public void inventoryPeeked() {
         writer.println(dateFormat.format(date) + " Inventory is seen by client");

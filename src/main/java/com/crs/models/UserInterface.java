@@ -32,16 +32,17 @@ public class UserInterface {
     }
 
     public void getAllCars() {
-
+        CarCost.costInitialization();
+        carInventory.getCarCollections().stream().forEach(c->c.setPricePerDay( CarCost.costChart.get(c.getCarType()) ));
         carInventory.getCarCollections().stream().forEach(System.out::println);
     }
 
     public String printSubMenuOfTwo() {
-        String subMenuString = "(1) Balance \n" +
-                "(2) Select Car \n" +
-                "(3) Option 3 \n" +
-                "(4) Option 4 \n" +
-                "Please select either 1,2,3 or 4 \n";
+        String subMenuString = "(1) Balance\n" +
+                "(2) Select Car\n" +
+                "(3) Active Invoices \n" +
+                "(4) Back to Main Menu\n" +
+                "Please select either 1,2,3 or 4!\n";
 
         System.out.println(subMenuString);
 
@@ -82,6 +83,9 @@ public class UserInterface {
                     return flag;
                 }
         ).collect(Collectors.toList());
+
+        CarCost.costInitialization();
+        carInventory.getCarCollections().stream().forEach(c->c.setPricePerDay( CarCost.costChart.get(c.getCarType()) ));
 
         return availableCars;
     }
