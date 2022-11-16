@@ -1,5 +1,6 @@
 package com.client;
 
+import com.crs.customer.Customer;
 import com.crs.datahub.Invoice;
 import com.crs.datahub.InvoiceList;
 import com.crs.models.CarCost;
@@ -7,7 +8,7 @@ import com.crs.models.CarCost;
 import java.util.List;
 
 public class SubMenu3 {
-    public static void ChangeReservations(List<Invoice> activeReservationList) {
+    public static void ChangeReservations(List<Invoice> activeReservationList, Customer customer) {
         System.out.println("1. Make Changes to Reservations.\n" +
                 "2. Go Back");
 
@@ -18,11 +19,13 @@ public class SubMenu3 {
 
             userInput = GlobalVariable.userInterface.userInput();
 
-            ModificationMenu(activeReservationList, userInput);
+            ModificationMenu(activeReservationList, userInput, customer);
+        } else {
+            MainMenuOption2.mainMenuOption2(customer);
         }
     }
 
-    public static void ModificationMenu(List<Invoice> activeReservationList, String userInput) {
+    public static void ModificationMenu(List<Invoice> activeReservationList, String userInput, Customer customer) {
         try {
             int index = Integer.parseInt(userInput);
 
@@ -40,7 +43,7 @@ public class SubMenu3 {
                 SelectModification(userInput, selectedInvoice);
             } else {
                 System.out.println("Invalid Selection");
-                SubMenu3.ChangeReservations(activeReservationList);
+                SubMenu3.ChangeReservations(activeReservationList, customer);
             }
 
         } catch (IllegalArgumentException e) {
