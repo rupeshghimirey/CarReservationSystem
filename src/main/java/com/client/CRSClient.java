@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class CRSClient {
     private static final String MAIN_OPTION_1 = "1";
     private static final String MAIN_OPTION_2 = "2";
-    private static final String MAIN_OPTION_3 = "2";
+    private static final String MAIN_OPTION_3 = "3";
     private static final String SUB_OPTION_1 = "1";
     private static final String SUB_OPTION_2 = "2";
     private static final String SUB_OPTION_3 = "3";
