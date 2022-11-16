@@ -15,7 +15,7 @@ public class SubMenu2Choice3 {
                 filter(c->c.getCustomer().equals(customer1)).collect(Collectors.toList());
 
         int j=1;
-        System.out.println("You have reserved: ");
+        //System.out.println("You have reserved: ");
         for(Invoice i : activeReservationList) {
             System.out.println(j++ +" " + i.getCar().getMake() + " "+ i.getCar().getModel() + " " + i.getCar().getPlateNumber()+
                     " " + i.getReservedPeriods().toString() +
@@ -26,5 +26,8 @@ public class SubMenu2Choice3 {
         }
 
         GlobalVariable.userInterface.userInput();
+
+        SubMenu3.ChangeReservations(activeReservationList);
     }
 }
+

@@ -7,8 +7,9 @@ public class SubMenu2Choice1 {
     private static final double UPPER_CAP_DEPOSIT = 25_000.0;
     private static final double LOWER_CAP_DEPOSIT = 25.0;
 
-    public static void subMenu2Choice1(Customer customer1) {
-        System.out.println("Your current Balance is: " + customer1.getBalance());
+    public static void subMenu2Choice1(Customer customer) {
+
+        System.out.println("Your current Balance is: " + customer.getBalance());
         System.out.println("(1) Add more Balance");
         System.out.println("(2) Previous Menu");
 
@@ -32,9 +33,10 @@ public class SubMenu2Choice1 {
                     System.out.println("Not enough deposit made this time.");
                 }
 
-                customer1.setBalance(customer1.getBalance() + oneTimeDeposit);
+                customer.setBalance(customer.getBalance() + oneTimeDeposit);
+
                 System.out.println("$ "+ oneTimeDeposit + " is added to your current balance!");
-                System.out.println("New balance: $" + customer1.getBalance());
+                System.out.println("New balance: $" + customer.getBalance());
 
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage() + "\nInvalid input");
