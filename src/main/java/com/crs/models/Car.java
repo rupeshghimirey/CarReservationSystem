@@ -129,14 +129,8 @@ public class Car {
     @Override
     public String toString() {
 
-        return  "Vin Number: " + getVin() + ", " +
-                "Plate Number: " + getPlateNumber() + ", " +
-                "Type: " + getCarType() + "， " +
-                "Price/day: " + getPricePerDay() + ", " +
-                "Year: " + getYear() + ", " +
-                "Make: " + getMake() + ", " +
-                "Model: " + getModel() +
-                //"Vehicle Reserved: " + isReserved() +
-                "\n";
+        String result = String.format("%-10s %-15s %-15s %-14s %-13s %-12s %-11s %-11s","",
+                getVin(),getPlateNumber() ,getCarType(),getPricePerDay(),getYear(),getMake(),getModel());
+        return result;
     }
 }

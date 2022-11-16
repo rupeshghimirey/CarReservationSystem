@@ -32,6 +32,7 @@ public class UserInterface {
     }
 
     public void getAllCars() {
+
         carInventory.getCarCollections().stream().forEach(System.out::println);
     }
 
