@@ -19,8 +19,11 @@ public class CRSClient {
     private static final String SUB_OPTION_3 = "3";
     private static final String SUB_OPTION_4 = "4";
     public static void main(String[] args) throws FileNotFoundException {
+
+
         GlobalVariable.userInterface = new UserInterface();
         GlobalVariable.invoiceReservation = new InvoiceReservation();
+        Customer customer =  GlobalVariable.userInterface.getCustomerInfo();
 
         while (GlobalVariable.isMenuRunning) {
             String userInput = GlobalVariable.userInterface.printMainMenu();
@@ -33,17 +36,18 @@ public class CRSClient {
 
                 while (GlobalVariable.isSubMenu2Choice) {
                     if (subMenu2Choice.equals(SUB_OPTION_1)) {
+
                         SubMenu2Choice1.subMenu2Choice1(GlobalVariable.userInterface.getCustomerInfo());
 
                         GlobalVariable.isSubMenu2Choice = false;
                     } else if (subMenu2Choice.equals(SUB_OPTION_2)) {
 
-                        SubMenu2Choice2.subMenu2Choice2(GlobalVariable.userInterface.getCustomerInfo());
+                        SubMenu2Choice2.subMenu2Choice2(customer);
 
                         GlobalVariable.isSubMenu2Choice = false;
 
                     } else if (subMenu2Choice.equals(SUB_OPTION_3)) {
-                        SubMenu2Choice3.subMenu2Choice3(GlobalVariable.userInterface.getCustomerInfo());
+                        SubMenu2Choice3.subMenu2Choice3(customer);
 
                         GlobalVariable.isSubMenu2Choice = false;
                     } else if (subMenu2Choice.equals(SUB_OPTION_4)) {
