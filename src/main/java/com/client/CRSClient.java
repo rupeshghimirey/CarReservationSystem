@@ -14,16 +14,19 @@ public class CRSClient {
     private static final String MAIN_OPTION_1 = "1";
     private static final String MAIN_OPTION_2 = "2";
     private static final String MAIN_OPTION_3 = "3";
-    private static final String SUB_OPTION_1 = "1";
-    private static final String SUB_OPTION_2 = "2";
-    private static final String SUB_OPTION_3 = "3";
-    private static final String SUB_OPTION_4 = "4";
-    public static void main(String[] args) throws FileNotFoundException {
+    public static final String SUB_OPTION_1 = "1";
+    public static final String SUB_OPTION_2 = "2";
+    public static final String SUB_OPTION_3 = "3";
+    public static final String SUB_OPTION_4 = "4";
 
+    private static Customer customer = new Customer("1", "Rupesh", "Ghimire", "123-456-7891",
+            new Address("86 Boston Hbr", "Cameron", "NC", "28326"),
+            new CreditCard("Rupesh", "1111 2222 3333 4444", "222", "10/45") {});
+
+    public static void main(String[] args) throws FileNotFoundException {
 
         GlobalVariable.userInterface = new UserInterface();
         GlobalVariable.invoiceReservation = new InvoiceReservation();
-        Customer customer =  GlobalVariable.userInterface.getCustomerInfo();
 
         while (GlobalVariable.isMenuRunning) {
             String userInput = GlobalVariable.userInterface.printMainMenu();
@@ -31,30 +34,7 @@ public class CRSClient {
             if (userInput.equalsIgnoreCase(MAIN_OPTION_1)) {
                 MainMenuOption1.onClick1();
             } else if (userInput.equalsIgnoreCase(MAIN_OPTION_2)) {
-                String subMenu2Choice = GlobalVariable.userInterface.printSubMenuOfTwo();
-                GlobalVariable.isSubMenu2Choice = true;
-
-                while (GlobalVariable.isSubMenu2Choice) {
-                    if (subMenu2Choice.equals(SUB_OPTION_1)) {
-
-                        SubMenu2Choice1.subMenu2Choice1(GlobalVariable.userInterface.getCustomerInfo());
-
-                        GlobalVariable.isSubMenu2Choice = false;
-                    } else if (subMenu2Choice.equals(SUB_OPTION_2)) {
-
-                        SubMenu2Choice2.subMenu2Choice2(customer);
-
-                        GlobalVariable.isSubMenu2Choice = false;
-
-                    } else if (subMenu2Choice.equals(SUB_OPTION_3)) {
-                        SubMenu2Choice3.subMenu2Choice3(customer);
-
-                        GlobalVariable.isSubMenu2Choice = false;
-                    } else if (subMenu2Choice.equals(SUB_OPTION_4)) {
-
-                        GlobalVariable.isSubMenu2Choice = false;
-                    }
-                }
+                MainMenuOption2.mainMenuOption2(customer);
             } else if (userInput.equalsIgnoreCase(MAIN_OPTION_3)) {
                 GlobalVariable.userInterface.thankYouMessage();
 

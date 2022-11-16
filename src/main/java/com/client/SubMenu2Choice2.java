@@ -70,4 +70,3 @@ public class SubMenu2Choice2 {
         }
     }
 }
-
