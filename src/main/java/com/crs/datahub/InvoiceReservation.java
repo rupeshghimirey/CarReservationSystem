@@ -1,5 +1,6 @@
 package com.crs.datahub;
 
+import com.crs.customer.Customer;
 import com.crs.models.CarCost;
 
 import java.io.File;
@@ -48,8 +49,8 @@ public class InvoiceReservation {
                 "\n");
                 //+ "Car Reservation Done!");
     }
-    public void inventoryPeeked() {
-        writer.println(dateFormat.format(date) + " Inventory is seen by client");
+    public void inventoryPeeked(Customer customer) {
+        writer.println(dateFormat.format(date) + " Inventory is seen by " + customer.getFirstName() +" "+ customer.getLastName()+"!");
     }
     // close the audit printer after the program exits
     public void closeFile() {

@@ -60,12 +60,12 @@ public class SubMenu2Choice2 {
 
             GlobalVariable.invoiceReservation.selectCar(newInvoice);
 
-            System.out.println(c.getVin() + " " + c.getMake() + " " + c.getModel() + " " + "Successfully Reserved!");
+            System.out.println(c.getVin() + " " + c.getMake() + " " + c.getModel() + " " + "is successfully reserved!");
 
             GlobalVariable.invoiceReservation.closeFile();
 
             customer1.setBalance(customer1.getBalance() - charges);
-            System.out.println(customer1.getFirstName() + " " + customer1.getLastName() + " is charged: $" + charges);
+            System.out.println(customer1.getFirstName() + " " + customer1.getLastName() + " is charged with: $" + charges);
             System.out.println("Current balance: $" + customer1.getBalance());
         }
     }
