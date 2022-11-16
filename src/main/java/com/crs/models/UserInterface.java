@@ -1,5 +1,8 @@
 package com.crs.models;
 
+import com.crs.customer.Address;
+import com.crs.customer.CreditCard;
+import com.crs.customer.Customer;
 import com.crs.datahub.CarInventory;
 import com.crs.datahub.ReservedPeriods;
 
@@ -13,6 +16,7 @@ import java.util.stream.Collectors;
 public class UserInterface {
     private Scanner myScanner;
     CarInventory carInventory = new CarInventory();
+
 
     public UserInterface() throws FileNotFoundException {
         myScanner = new Scanner(System.in);
@@ -129,5 +133,14 @@ public class UserInterface {
         }
 
         return newPeriod;
+    }
+    public Customer getCustomerInfo() {
+        return new Customer("1", "Rupesh", "Ghimire", "123-456-7891",
+                new Address("86 Boston Hbr", "Cameron", "NC", "28326"),
+                new CreditCard("Rupesh", "1111 2222 3333 4444", "222", "10/45") {});
+    }
+    public void thankYouMessage() {
+        System.out.println("Thank You for visiting CRS! See you again!");
+
     }
 }
