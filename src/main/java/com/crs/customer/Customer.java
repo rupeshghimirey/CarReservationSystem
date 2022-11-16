@@ -67,9 +67,7 @@ public class Customer implements IPayment{
     }
 
     @Override
-    public void pay(double charges) {
-
-    }
+    public void pay(double charges) {}
 
     @Override
     public String toString() {

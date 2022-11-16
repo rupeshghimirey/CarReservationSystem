@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CarCost {
-    final static Map<CarType, Integer> costChart = new HashMap<>();
+    public final static Map<CarType, Integer> costChart = new HashMap<>();
 
-    private static void costInitialization() {
+    public static void costInitialization() {
         costChart.put(CarType.LUXURY, 400);
         costChart.put(CarType.SPORTS, 350);
         costChart.put(CarType.SUV, 300);
