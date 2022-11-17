@@ -36,6 +36,5 @@ public class GlobalInitialization {
 
         currentCustomer = CustomerList.getCustomerList().get(1);
 
-        //MainMenu_LevelZero.put("1", MainMenuOption1.onClick1());
     }
 }

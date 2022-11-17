@@ -11,7 +11,7 @@ import static com.client.GlobalVariable.*;
 public class SubMenu3 {
     public static void ChangeReservations(List<Reservation> activeReservationList) {
         System.out.println("(1) Modify Reservations.\n" +
-                "2. Go Back");
+                "(2) Go Back");
 
         String userInput = userInterface.userInput();
 

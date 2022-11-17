@@ -48,7 +48,7 @@ public class DisplayUsersList {
 
     public static void displayUser() {
         CustomerList customerList = new CustomerList();
-        System.out.println("Current Logged in as " + currentCustomer.getFirstName() + "\n");
+        System.out.println("Currently Logged in as: " + currentCustomer.getFirstName() + "\n");
         System.out.println(customerList.toString());
     }
 

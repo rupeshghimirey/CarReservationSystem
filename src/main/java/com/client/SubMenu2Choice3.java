@@ -11,7 +11,7 @@ import static com.client.GlobalVariable.userInterface;
 
 public class SubMenu2Choice3 {
     public static void subMenu2Choice3() {
-        System.out.println("Current Active reservations for " + currentCustomer.getFirstName() + ":");
+        System.out.println("Current Active reservations for " + currentCustomer.getFirstName() + ":\n");
 
         var activeReservationList = ReservationList.getReservationList().stream().
                 filter(c->c.getCustomer().equals(currentCustomer)).collect(Collectors.toList());

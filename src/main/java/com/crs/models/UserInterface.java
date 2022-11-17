@@ -18,7 +18,7 @@ public class UserInterface {
 
     public UserInterface() throws FileNotFoundException {
         myScanner = new Scanner(System.in);
-        //this.myScanner = myScanner;
+
     }
     // main menu
 
