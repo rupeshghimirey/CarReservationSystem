@@ -4,12 +4,12 @@ import com.crs.customer.Address;
 import com.crs.customer.CreditCard;
 import com.crs.customer.Customer;
 import com.crs.customer.CustomerList;
-import com.crs.datahub.InvoiceReservation;
 import com.crs.models.UserInterface;
 
 import java.io.FileNotFoundException;
 
-import static com.client.GlobalVariable.*;
+import static com.client.GlobalVariable.currentCustomer;
+import static com.client.GlobalVariable.userInterface;
 
 public class GlobalInitialization {
     public static void globeInitializationStart() throws FileNotFoundException {
@@ -32,7 +32,7 @@ public class GlobalInitialization {
 
         userInterface = new UserInterface();
 
-        invoiceReservation = new InvoiceReservation();
+        //invoiceReservation = new InvoiceReservation();
 
         currentCustomer = CustomerList.getCustomerList().get(1);
 
