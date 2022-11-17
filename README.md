@@ -1,23 +1,38 @@
-# CAR RESERVATION SYSTEM (CRS)
+#CAR RESERVATION SYSTEM (CRS)
 
-## This is a project for car reservation system.
+##Project Description
 
-- You can book and cancel reservations with our highly experienced reservation specialist through this website.
+####Using our Command-line Interface: 
 
-- You can see the different services that the CRS provides.
-- As a client, you can enroll your car into our CRS system.
+- You can view our inventory of cars.
+- You can book, modify, and cancel car reservations.
+- You can add money to your account balance.
+- An invoice will be generated after your transaction.
 
-## Team members of C.A.R
+##Team members of C.A.R
 
 - Rupesh Ghimire
 - Alex Aguilar
 - Chongwei Ma
 
-## Car Rental Reservation Process
+##Car Rental Reservation Process
 
-![image](./images/carDiagram.png)
+![image](./images/CRS_Diagram.png)
 
-## MVP
-- As a user, I want to view the vehicles available.
-- As a user, I want to reserve a vehicle with a start and stop date.
+##User Stories
+- As a user, I want to view the cars available.
+
+![image](./images/Car_Inventory.png)
+
+- As a user, I want to reserve a car with a start and stop date.
+
+-![image](./images/Reserve_Car.png)
+
+
+- As a user, I should be able to make a payment for my reservation
+
+![image](./images/Payment.png)
+
 - As a user, I want to view the invoice/bill.
+
+![image](./images/Invoice.png)
