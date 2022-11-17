@@ -1,11 +1,11 @@
 # CAR RESERVATION SYSTEM (CRS)
 
 ## Table of Contents
-1. [Project Description](#Project Description )
-2. [Team Members](#Team members of C.A.R)
-3. [Car Reservation Process](#Car Reservation Process )
-4. [User Stories](#User Stories)
-5. [Presentation Link](#Presentation Link)
+1. [Project Description](https://github.com/rupeshghimirey/CarReservationSystem#project-description)
+2. [Team Members](#Team-members-of-C.A.R)
+3. [Car Reservation Process](#Car-Reservation-Process )
+4. [User Stories](#User-Stories)
+5. [Presentation Link](#Presentation-Link)
 
 
 
