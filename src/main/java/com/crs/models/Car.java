@@ -133,4 +133,39 @@ public class Car {
                 getVin(),getPlateNumber() ,getCarType(),getPricePerDay(),getYear(),getMake(),getModel());
         return result;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Car car = (Car) o;
+
+        if (Double.compare(car.pricePerDay, pricePerDay) != 0) return false;
+        if (isReserved != car.isReserved) return false;
+        if (vin != null ? !vin.equals(car.vin) : car.vin != null) return false;
+        if (plateNumber != null ? !plateNumber.equals(car.plateNumber) : car.plateNumber != null) return false;
+        if (carType != car.carType) return false;
+        if (year != null ? !year.equals(car.year) : car.year != null) return false;
+        if (make != null ? !make.equals(car.make) : car.make != null) return false;
+        if (model != null ? !model.equals(car.model) : car.model != null) return false;
+        return periods != null ? periods.equals(car.periods) : car.periods == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = vin != null ? vin.hashCode() : 0;
+        result = 31 * result + (plateNumber != null ? plateNumber.hashCode() : 0);
+        result = 31 * result + (carType != null ? carType.hashCode() : 0);
+        result = 31 * result + (year != null ? year.hashCode() : 0);
+        result = 31 * result + (make != null ? make.hashCode() : 0);
+        result = 31 * result + (model != null ? model.hashCode() : 0);
+        temp = Double.doubleToLongBits(pricePerDay);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (isReserved ? 1 : 0);
+        result = 31 * result + (periods != null ? periods.hashCode() : 0);
+        return result;
+    }
 }

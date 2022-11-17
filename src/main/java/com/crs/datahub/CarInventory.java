@@ -72,5 +72,21 @@ public class CarInventory implements ICarInventory {
         return carMap;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        CarInventory that = (CarInventory) o;
+
+        if (reader != null ? !reader.equals(that.reader) : that.reader != null) return false;
+        return carCollections != null ? carCollections.equals(that.carCollections) : that.carCollections == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = reader != null ? reader.hashCode() : 0;
+        result = 31 * result + (carCollections != null ? carCollections.hashCode() : 0);
+        return result;
+    }
 }
