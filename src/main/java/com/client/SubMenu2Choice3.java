@@ -1,7 +1,7 @@
 package com.client;
 
-import com.crs.datahub.Invoice;
-import com.crs.datahub.InvoiceList;
+import com.crs.datahub.Reservation;
+import com.crs.datahub.ReservationList;
 import com.crs.models.CarCost;
 
 import java.util.stream.Collectors;
@@ -11,9 +11,9 @@ import static com.client.GlobalVariable.userInterface;
 
 public class SubMenu2Choice3 {
     public static void subMenu2Choice3() {
-        System.out.println("Your current active invoices");
+        System.out.println("Current Active Invoices for " + currentCustomer.getFirstName() + ":");
 
-        var activeReservationList = InvoiceList.getInvoiceList().stream().
+        var activeReservationList = ReservationList.getReservationList().stream().
                 filter(c->c.getCustomer().equals(currentCustomer)).collect(Collectors.toList());
 
         int j=1;
@@ -21,7 +21,7 @@ public class SubMenu2Choice3 {
         int activeReservationListSize = activeReservationList.size();
 
         if(activeReservationListSize > 0) {
-            for(Invoice i/*voice*/ : activeReservationList) {
+            for(Reservation i/*voice*/ : activeReservationList) {
                 System.out.println(j++ +" " + i.getCar().getMake() + " "+ i.getCar().getModel() + " " + i.getCar().getPlateNumber()+
                         " " + i.getReservedPeriods().toString() +
                         "\nCost for this reservation: " +
@@ -29,11 +29,10 @@ public class SubMenu2Choice3 {
                         "\n"
                 );
             }
-
             SubMenu3.ChangeReservations(activeReservationList);
 
         } else {
-            System.out.println("You don't have any active reservations, press any key to go back to previous menu.");
+            System.out.println("No Active Reservations. Press Any Key to Continue.");
         }
 
         userInterface.userInput();

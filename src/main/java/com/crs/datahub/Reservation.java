@@ -3,15 +3,15 @@ package com.crs.datahub;
 import com.crs.customer.Customer;
 import com.crs.models.Car;
 
-public class Invoice {
+public class Reservation {
 
     private Customer customer;
     private ReservedPeriods reservedPeriods;
     private Car car;
 
-    public Invoice() {}
+    public Reservation() {}
 
-    public Invoice(Customer customer, ReservedPeriods reservedPeriods, Car car) {
+    public Reservation(Customer customer, ReservedPeriods reservedPeriods, Car car) {
         this.customer = customer;
         this.reservedPeriods = reservedPeriods;
         this.car = car;

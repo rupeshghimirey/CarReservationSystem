@@ -13,6 +13,7 @@ import java.util.Date;
 
 public class InvoiceReservation {
     // creates newFile with invoice.txt
+    //String userInvoiceString =
     File newFile = new File("invoice.txt");
     // prints out the output file
     PrintWriter writer;
@@ -38,7 +39,7 @@ public class InvoiceReservation {
     }
 
     // prints out in output file whenever this method is called in CRSClient
-    public void selectCar(Invoice invoice) {
+    public void selectCar(Reservation invoice) {
         double charges = CarCost.totalCharge(invoice.getCar(), invoice.getReservedPeriods().getTotalReservedDays());
 
         writer.println(dateFormat.format(date) + "\n" +

@@ -9,7 +9,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class UserInterfaceTest {
 
@@ -33,7 +33,6 @@ public class UserInterfaceTest {
     @Test
     public void testGetAllCars_sout_car_inventory() {
         userInterface.getAllCars();
-
     }
 
     @Test

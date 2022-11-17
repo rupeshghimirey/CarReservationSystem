@@ -9,7 +9,7 @@ public class SubMenu2Choice1 {
 
     public static void subMenu2Choice1() {
 
-        System.out.println("Your current Balance is: " + currentCustomer.getBalance());
+        System.out.println("Current Balance for " + currentCustomer.getFirstName() + " Is: " + currentCustomer.getBalance());
         System.out.println("(1) Add more Balance");
         System.out.println("(2) Previous Menu");
 
@@ -22,24 +22,23 @@ public class SubMenu2Choice1 {
             try {
                 double oneTimeDeposit = Double.parseDouble(addAmount);
 
-                if(oneTimeDeposit > UPPER_CAP_DEPOSIT) {
+                if (oneTimeDeposit > UPPER_CAP_DEPOSIT) {
 
                     System.out.println("You have reached the cap amount of $" + UPPER_CAP_DEPOSIT +
                             ". And only $" + UPPER_CAP_DEPOSIT + " is deposited.");
 
                     oneTimeDeposit = UPPER_CAP_DEPOSIT;
 
-                }else if(oneTimeDeposit <= LOWER_CAP_DEPOSIT) {
+                } else if (oneTimeDeposit <= LOWER_CAP_DEPOSIT) {
                     System.out.println("Not enough deposit made this time.");
+                } else {
+                    currentCustomer.setBalance(currentCustomer.getBalance() + oneTimeDeposit);
+
+                    System.out.println("$ "+ oneTimeDeposit + " is added to your current balance!");
+                    System.out.println("New balance: $" + currentCustomer.getBalance());
                 }
-
-                currentCustomer.setBalance(currentCustomer.getBalance() + oneTimeDeposit);
-
-                System.out.println("$ "+ oneTimeDeposit + " is added to your current balance!");
-                System.out.println("New balance: $" + currentCustomer.getBalance());
-
             } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage() + "\nInvalid input");
+                System.out.println("Error: " + e.getMessage());
             }
         }
     }

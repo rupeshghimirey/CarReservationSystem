@@ -1,21 +1,15 @@
 package com.client;
 
-import com.crs.datahub.*;
-import com.crs.models.UserInterface;
-
 import java.io.FileNotFoundException;
 
+import static com.client.GlobalInitialization.globeInitializationStart;
 import static com.client.GlobalVariable.*;
 
 public class CRSClient {
-
-
     public static void main(String[] args) throws FileNotFoundException {
+        globeInitializationStart();
 
-        userInterface = new UserInterface();
-        invoiceReservation = new InvoiceReservation();
-
-        while (isMenuRunning) {
+        while (true) {
             String userInput = userInterface.printMainMenu();
 
             if (userInput.equalsIgnoreCase(MAIN_OPTION_1)) {
@@ -24,7 +18,9 @@ public class CRSClient {
 
             } else if (userInput.equalsIgnoreCase(MAIN_OPTION_2)) {
 
-                SubMenu2Choice1.subMenu2Choice1();
+                //SubMenu2Choice1.subMenu2Choice1();
+
+                DisplayUsersList.SwitchUserMenu();
 
             } else if (userInput.equalsIgnoreCase(MAIN_OPTION_3)) {
 
@@ -35,7 +31,7 @@ public class CRSClient {
 
                 invoiceReservation.closeFile();//may not be necessary
 
-                isMenuRunning = false;
+                break;
             }
         }
     }

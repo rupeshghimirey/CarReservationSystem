@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 
 public class CarInventoryTest {
 
@@ -82,6 +83,8 @@ public class CarInventoryTest {
         HashMap<String, Car> expectedHashMap = new HashMap<>();
         expectedHashMap.put("10023", new Car("10023", "ND 35789", CarType.SEDAN,
                 "2010", "Audi", 100.0, "A3" ));
-        assertEquals(expectedHashMap, actualCarMap);
+
+        String samekey = "10023";
+        assertEquals(expectedHashMap.get(samekey).getPlateNumber(), actualCarMap.get(samekey).getPlateNumber());
     }
 }

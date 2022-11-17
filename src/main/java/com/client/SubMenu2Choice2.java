@@ -1,7 +1,7 @@
 package com.client;
 
-import com.crs.datahub.Invoice;
-import com.crs.datahub.InvoiceList;
+import com.crs.datahub.Reservation;
+import com.crs.datahub.ReservationList;
 import com.crs.datahub.ReservedPeriods;
 import com.crs.models.Car;
 import com.crs.models.CarCost;
@@ -55,8 +55,8 @@ public class SubMenu2Choice2 {
         } else {
             c.inputPeriod(newPeriod1);
 
-            Invoice newInvoice = new Invoice(currentCustomer,newPeriod1,c);
-            InvoiceList.addToInvoiceList(newInvoice);
+            Reservation newInvoice = new Reservation(currentCustomer,newPeriod1,c);
+            ReservationList.addToInvoiceList(newInvoice);
 
             invoiceReservation.selectCar(newInvoice);
 

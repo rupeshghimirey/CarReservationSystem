@@ -28,8 +28,6 @@ public class CarCostTest {
 
         double expectedTotal = 500.0;
 
-
         assertEquals(expectedTotal, actualTotal, .001);
-
     }
 }

@@ -4,6 +4,7 @@ import com.crs.datahub.ReservedPeriods;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Car {
 
@@ -16,7 +17,7 @@ public class Car {
     private double pricePerDay;
     private boolean isReserved;
 
-    private List<ReservedPeriods> periods = new ArrayList<>();
+    private final List<ReservedPeriods> periods = new ArrayList<>();
 
     public Car() {}
 
@@ -104,31 +105,16 @@ public class Car {
     }
 
     public void inputPeriod(ReservedPeriods period) {
-        if(period == null) {
-            throw new IllegalArgumentException("NUll DATES");
-        }
-        if(period.getStartDate().after(period.getEndDate())) {
-            System.out.println("invalid input.");
+        if(period == null || period.getStartDate().after(period.getEndDate())) {
+            System.out.println("Invalid Input!");
+            //throw new IllegalArgumentException("NUll DATES");
             return;
         }
         periods.add(period);
     }
 
-    public void updatePeriod(ReservedPeriods period) {
-    }
-
-    public void removePeriod(ReservedPeriods period) {
-
-    }
-
-    public static Car newInstance(String vin, String plateNumber, CarType carType, double price, String year, String make, String model) {
-        Car car = new Car(vin, plateNumber, carType, year, make,price, model);
-        return car;
-    }
-
     @Override
     public String toString() {
-
         String result = String.format("%-10s %-15s %-15s %-14s %-13s %-12s %-11s %-11s","",
                 getVin(),getPlateNumber() ,getCarType(),getPricePerDay(),getYear(),getMake(),getModel());
         return result;
@@ -143,13 +129,13 @@ public class Car {
 
         if (Double.compare(car.pricePerDay, pricePerDay) != 0) return false;
         if (isReserved != car.isReserved) return false;
-        if (vin != null ? !vin.equals(car.vin) : car.vin != null) return false;
-        if (plateNumber != null ? !plateNumber.equals(car.plateNumber) : car.plateNumber != null) return false;
+        if (!Objects.equals(vin, car.vin)) return false;
+        if (!Objects.equals(plateNumber, car.plateNumber)) return false;
         if (carType != car.carType) return false;
-        if (year != null ? !year.equals(car.year) : car.year != null) return false;
-        if (make != null ? !make.equals(car.make) : car.make != null) return false;
-        if (model != null ? !model.equals(car.model) : car.model != null) return false;
-        return periods != null ? periods.equals(car.periods) : car.periods == null;
+        if (!Objects.equals(year, car.year)) return false;
+        if (!Objects.equals(make, car.make)) return false;
+        if (!Objects.equals(model, car.model)) return false;
+        return Objects.equals(periods, car.periods);
     }
 
     @Override

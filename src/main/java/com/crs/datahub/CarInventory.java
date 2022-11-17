@@ -6,12 +6,11 @@ import java.io.FileNotFoundException;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
 public class CarInventory implements ICarInventory {
 
     CarFileReader reader = new CarFileReader();
 
-    private List<Car> carCollections = new ArrayList<>();
+    private List<Car> carCollections; // = new ArrayList<>();
 
     public CarInventory() throws FileNotFoundException {
         carCollections = reader.processCarInventory();
@@ -19,10 +18,6 @@ public class CarInventory implements ICarInventory {
 
     public List<Car> getCarCollections() {
         return carCollections;
-    }
-
-    public void setCarCollections(List<Car> carCollections) {
-        this.carCollections = carCollections;
     }
 
     @Override
@@ -79,8 +74,8 @@ public class CarInventory implements ICarInventory {
 
         CarInventory that = (CarInventory) o;
 
-        if (reader != null ? !reader.equals(that.reader) : that.reader != null) return false;
-        return carCollections != null ? carCollections.equals(that.carCollections) : that.carCollections == null;
+        if (!Objects.equals(reader, that.reader)) return false;
+        return Objects.equals(carCollections, that.carCollections);
     }
 
     @Override
@@ -88,5 +83,14 @@ public class CarInventory implements ICarInventory {
         int result = reader != null ? reader.hashCode() : 0;
         result = 31 * result + (carCollections != null ? carCollections.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        String outPutString = null;
+        for(Car car : carCollections) {
+            outPutString = outPutString + car.toString() + "\n";
+        }
+        return outPutString;
     }
 }

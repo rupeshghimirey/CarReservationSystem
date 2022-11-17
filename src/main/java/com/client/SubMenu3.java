@@ -1,7 +1,7 @@
 package com.client;
 
-import com.crs.datahub.Invoice;
-import com.crs.datahub.InvoiceList;
+import com.crs.datahub.Reservation;
+import com.crs.datahub.ReservationList;
 import com.crs.models.CarCost;
 
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
 import static com.client.GlobalVariable.*;
 
 public class SubMenu3 {
-    public static void ChangeReservations(List<Invoice> activeReservationList) {
+    public static void ChangeReservations(List<Reservation> activeReservationList) {
         System.out.println("1. Make Changes to Reservations.\n" +
                 "2. Go Back");
 
@@ -26,13 +26,13 @@ public class SubMenu3 {
         }
     }
 
-    public static void ModificationMenu(List<Invoice> activeReservationList, String userInput) {
+    public static void ModificationMenu(List<Reservation> activeReservationList, String userInput) {
         try {
             int index = Integer.parseInt(userInput);
 
             if (index > 0 && index <= activeReservationList.size()) {
 
-                Invoice selectedInvoice = InvoiceList.getInvoiceList().get(index - 1);
+                Reservation selectedInvoice = ReservationList.getReservationList().get(index - 1);
 
                 System.out.println("What do you want to modify: \n" +
                         "1. I want to remake the reservation.\n" +
@@ -52,11 +52,11 @@ public class SubMenu3 {
         }
     }
 
-    public static void SelectModification(String userInput, Invoice invoice) {
+    public static void SelectModification(String userInput, Reservation invoice) {
         if(userInput.equals("1")) {
             //Invoice invoiceTemp = invoice;
 
-            InvoiceList.removeFromInvoiceList(invoice);
+            ReservationList.removeFromInvoiceList(invoice);
             invoice.getCar().getPeriods().remove(invoice.getReservedPeriods());
             invoice.getCustomer().setBalance(invoice.getCustomer().getBalance()
                     + CarCost.totalCharge(invoice.getCar(),invoice.getReservedPeriods().getTotalReservedDays()));
@@ -70,8 +70,8 @@ public class SubMenu3 {
         }
     }
 
-    public static void cancelReservation(Invoice invoice) {
-        InvoiceList.removeFromInvoiceList(invoice);
+    public static void cancelReservation(Reservation invoice) {
+        ReservationList.removeFromInvoiceList(invoice);
         invoice.getCar().getPeriods().remove(invoice.getReservedPeriods());
 
         invoice.getCustomer().setBalance(invoice.getCustomer().getBalance()

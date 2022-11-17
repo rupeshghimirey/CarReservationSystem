@@ -9,6 +9,8 @@ public class Customer implements IPayment{
     private IPayment payment;
     private double balance = 1000.0;
 
+    public Customer() {}
+
     public Customer(String id, String firstName, String lastName, String phoneNumber, Address address, IPayment payment) {
         this.id = id;
         this.firstName = firstName;

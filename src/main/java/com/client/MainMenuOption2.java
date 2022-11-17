@@ -4,7 +4,7 @@ import static com.client.GlobalVariable.*;
 
 public class MainMenuOption2 {
     public static void mainMenuOption2() {
-        String subMenu2Choice = userInterface.printSubMenuOfTwo();
+        String subMenu2Choice = userInterface.printSubMenuTwo();
         isSubMenu2Choice = true;
 
         while (isSubMenu2Choice) {
