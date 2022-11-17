@@ -20,7 +20,7 @@ public class DisplayUsersList {
     public static Customer selectOptions() {
         Customer selectedCustomer = currentCustomer;
 
-        System.out.println("Select The Index of User You Want to Switch Into:");
+        System.out.println("Please Select The Index of User You Want to Switch Into:");
         String userInput = GlobalVariable.userInterface.userInput();
 
         int userSize = CustomerList.getCustomerList().size();

@@ -18,7 +18,7 @@ public class GlobalInitialization {
                 new Address("86 Boston Hbr", "Cameron", "NC", "28326"),
                 new CreditCard("Rupesh", "1111 2222 3333 4444", "222", "10/45") {});
 
-        Customer customer2 = new Customer("2", "Alex", "Agullar", "123-456-7891",
+        Customer customer2 = new Customer("2", "Alex", "Aguilar", "123-456-7891",
                 new Address("1918 8th Ave", "Seattle", "WA", "98101"),
                 new CreditCard("Alex", "1111 2222 3333 4444", "222", "10/45") {});
 

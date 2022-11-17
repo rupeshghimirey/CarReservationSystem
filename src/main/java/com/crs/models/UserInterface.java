@@ -43,9 +43,8 @@ public class UserInterface {
     public String printMainMenu() {
         String mainMenuString = drawTitle() +
                 "(1) Display Car Inventory\n"+
-                //"(2) Add Balance\n" +
                 "(2) Switch Users\n" +
-                "(3) My CRS\n" +
+                "(3) Make Reservation\n" +
                 "(4) Exit\n" +
                 "Please enter 1, 2, 3 or 4 only!\n";
         System.out.println(mainMenuString);
@@ -59,9 +58,9 @@ public class UserInterface {
     }
 
     public String printSubMenuTwo() {
-        String subMenuString = "(1) Add Balance\n" +
+        String subMenuString = "(1) View/Add Balance\n" +
                 "(2) Reserve a Car\n" +
-                "(3) " + currentCustomer.getFirstName() + "'s Invoices\n" +
+                "(3) " + currentCustomer.getFirstName() + "'s Reservations\n" +
                 "(4) Back to Main Menu\n" +
                 "Please select either 1,2,3 or 4!\n";
 

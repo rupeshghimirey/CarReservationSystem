@@ -9,9 +9,9 @@ import static com.client.GlobalVariable.*;
 
 public class SubMenu2Choice2 {
     public static void subMenu2Choice2() {
-        System.out.println("Please input the starting date");
+        System.out.println("Please input the starting date:(Date format yyyy-mm-dd)");
         String startDate = userInterface.userInput();
-        System.out.println("Please input the end date");
+        System.out.println("Please input the end date(Date format yyyy-mm-dd)");
         String endDate = userInterface.userInput();
 
         ReservedPeriods newPeriod1 = userInterface.inputReservedPeriod(startDate, endDate);

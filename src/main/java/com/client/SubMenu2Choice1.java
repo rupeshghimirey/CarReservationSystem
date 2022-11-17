@@ -15,7 +15,7 @@ public class SubMenu2Choice1 {
 
         String addMoreBalance = userInterface.userInput();
         if (addMoreBalance.equals("1")) {
-            System.out.println("How much do you want to deposit? " +
+            System.out.println("How much would you like to deposit? " +
                     "(Amount should be in between $" + LOWER_CAP_DEPOSIT + " and $" + UPPER_CAP_DEPOSIT + ")");
             String addAmount = userInterface.userInput();
 
