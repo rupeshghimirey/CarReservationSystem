@@ -1,5 +1,7 @@
 package com.client;
 
+import static com.client.GlobalVariable.*;
+
 public class MainMenuOption1 {
 
     public static void onClick1() {
@@ -7,9 +9,9 @@ public class MainMenuOption1 {
                 "", "Vin Number", "Plate Number", "Car Type", "Price/Day", "Year", "Make", "Model");
         System.out.println();
         System.out.println();
-        GlobalVariable.userInterface.getAllCars();
+        userInterface.getAllCars();
         try {
-            GlobalVariable.invoiceReservation.inventoryPeeked(GlobalVariable.userInterface.getCustomerInfo());
+            invoiceReservation.inventoryPeeked(userInterface.getCustomerInfo());
         }
         catch (IllegalArgumentException e) {
 
