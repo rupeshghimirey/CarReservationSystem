@@ -1,26 +1,26 @@
 package com.client;
 
-import com.crs.customer.Customer;
 import com.crs.datahub.Invoice;
 import com.crs.datahub.InvoiceList;
 import com.crs.datahub.ReservedPeriods;
 import com.crs.models.Car;
 import com.crs.models.CarCost;
+import static com.client.GlobalVariable.*;
 
 public class SubMenu2Choice2 {
-    public static void subMenu2Choice2(Customer customer) {
+    public static void subMenu2Choice2() {
         System.out.println("Please input the starting date");
-        String startDate = GlobalVariable.userInterface.userInput();
+        String startDate = userInterface.userInput();
         System.out.println("Please input the end date");
-        String endDate = GlobalVariable.userInterface.userInput();
+        String endDate = userInterface.userInput();
 
-        ReservedPeriods newPeriod1 = GlobalVariable.userInterface.inputReservedPeriod(startDate, endDate);
+        ReservedPeriods newPeriod1 = userInterface.inputReservedPeriod(startDate, endDate);
         System.out.printf("%-10s %-15s %-15s %-14s %-13s %-12s %-11s %-11s",
                 "Car Index", "Vin Number", "Plate Number", "Car Type", "Price/Day", "Year", "Make", "Model");
         System.out.println();
         System.out.println();
         int i = 0;
-        for (Car c : GlobalVariable.userInterface.getAvailableCars(newPeriod1)) {
+        for (Car c : userInterface.getAvailableCars(newPeriod1)) {
             System.out.println(++i + " " + c.toString());
         }
 
@@ -28,7 +28,7 @@ public class SubMenu2Choice2 {
         String selectedCarIndex;
         do {
             System.out.println("Please select the car index to reserve");
-            selectedCarIndex = GlobalVariable.userInterface.userInput();
+            selectedCarIndex = userInterface.userInput();
             try {
                 int j = Integer.parseInt(selectedCarIndex);
                 if (j > 0 && j <= i) {
@@ -42,31 +42,31 @@ public class SubMenu2Choice2 {
         }
         while (flag);
 
-        Car c = GlobalVariable.userInterface.selectCar(newPeriod1, selectedCarIndex);
+        Car c = userInterface.selectCar(newPeriod1, selectedCarIndex);
 
         double charges = CarCost.totalCharge(c, newPeriod1.getTotalReservedDays());
 
-        if (charges > customer.getBalance()) {
+        if (charges > currentCustomer.getBalance()) {
 
-            System.out.println("Not enough balance on " + customer.getFirstName() + " " + customer.getLastName() + " account!");
+            System.out.println("Not enough balance on " + currentCustomer.getFirstName() + " " + currentCustomer.getLastName() + " account!");
 
-            SubMenu2Choice1.subMenu2Choice1(customer);
+            SubMenu2Choice1.subMenu2Choice1();
 
         } else {
             c.inputPeriod(newPeriod1);
 
-            Invoice newInvoice = new Invoice(customer,newPeriod1,c);
+            Invoice newInvoice = new Invoice(currentCustomer,newPeriod1,c);
             InvoiceList.addToInvoiceList(newInvoice);
 
-            GlobalVariable.invoiceReservation.selectCar(newInvoice);
+            invoiceReservation.selectCar(newInvoice);
 
             System.out.println(c.getVin() + " " + c.getMake() + " " + c.getModel() + " " + "is successfully reserved!");
 
-            GlobalVariable.invoiceReservation.closeFile();
+            invoiceReservation.closeFile();
 
-            customer.setBalance(customer.getBalance() - charges);
-            System.out.println(customer.getFirstName() + " " + customer.getLastName() + " is charged with: $" + charges);
-            System.out.println("Current balance: $" + customer.getBalance());
+            currentCustomer.setBalance(currentCustomer.getBalance() - charges);
+            System.out.println(currentCustomer.getFirstName() + " " + currentCustomer.getLastName() + " is charged with: $" + charges);
+            System.out.println("Current balance: $" + currentCustomer.getBalance());
         }
     }
 }

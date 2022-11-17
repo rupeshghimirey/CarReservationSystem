@@ -1,23 +1,23 @@
 package com.client;
 
-import com.crs.customer.Customer;
+import static com.client.GlobalVariable.*;
 
 public class SubMenu2Choice1 {
 
     private static final double UPPER_CAP_DEPOSIT = 25_000.0;
     private static final double LOWER_CAP_DEPOSIT = 25.0;
 
-    public static void subMenu2Choice1(Customer customer) {
+    public static void subMenu2Choice1() {
 
-        System.out.println("Your current Balance is: " + customer.getBalance());
+        System.out.println("Your current Balance is: " + currentCustomer.getBalance());
         System.out.println("(1) Add more Balance");
         System.out.println("(2) Previous Menu");
 
-        String addMoreBalance = GlobalVariable.userInterface.userInput();
+        String addMoreBalance = userInterface.userInput();
         if (addMoreBalance.equals("1")) {
             System.out.println("How much do you want to deposit? " +
                     "(Amount should be in between $" + LOWER_CAP_DEPOSIT + " and $" + UPPER_CAP_DEPOSIT + ")");
-            String addAmount = GlobalVariable.userInterface.userInput();
+            String addAmount = userInterface.userInput();
 
             try {
                 double oneTimeDeposit = Double.parseDouble(addAmount);
@@ -33,10 +33,10 @@ public class SubMenu2Choice1 {
                     System.out.println("Not enough deposit made this time.");
                 }
 
-                customer.setBalance(customer.getBalance() + oneTimeDeposit);
+                currentCustomer.setBalance(currentCustomer.getBalance() + oneTimeDeposit);
 
                 System.out.println("$ "+ oneTimeDeposit + " is added to your current balance!");
-                System.out.println("New balance: $" + customer.getBalance());
+                System.out.println("New balance: $" + currentCustomer.getBalance());
 
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage() + "\nInvalid input");

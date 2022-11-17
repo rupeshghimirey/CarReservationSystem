@@ -1,31 +1,32 @@
 package com.client;
 
-import com.crs.customer.Customer;
 import com.crs.datahub.Invoice;
 import com.crs.datahub.InvoiceList;
 import com.crs.models.CarCost;
 
 import java.util.List;
 
+import static com.client.GlobalVariable.*;
+
 public class SubMenu3 {
-    public static void ChangeReservations(List<Invoice> activeReservationList, Customer customer) {
+    public static void ChangeReservations(List<Invoice> activeReservationList) {
         System.out.println("1. Make Changes to Reservations.\n" +
                 "2. Go Back");
 
-        String userInput = GlobalVariable.userInterface.userInput();
+        String userInput = userInterface.userInput();
 
         if (userInput.equals("1")) {
             System.out.println("Select the index of the reservation you want to modify. (Only one reservation can be modified each time.)");
 
-            userInput = GlobalVariable.userInterface.userInput();
+            userInput = userInterface.userInput();
 
-            ModificationMenu(activeReservationList, userInput, customer);
+            ModificationMenu(activeReservationList, userInput);
         } else {
-            MainMenuOption2.mainMenuOption2(customer);
+            MainMenuOption2.mainMenuOption2();
         }
     }
 
-    public static void ModificationMenu(List<Invoice> activeReservationList, String userInput, Customer customer) {
+    public static void ModificationMenu(List<Invoice> activeReservationList, String userInput) {
         try {
             int index = Integer.parseInt(userInput);
 
@@ -38,12 +39,12 @@ public class SubMenu3 {
                         "2. I want to cancel this reservation. (can not be reversed!)\n" +
                         "3. My hands were shaking and I clicked the wrong button.\n");
 
-                userInput = GlobalVariable.userInterface.userInput();
+                userInput = userInterface.userInput();
 
                 SelectModification(userInput, selectedInvoice);
             } else {
                 System.out.println("Invalid Selection");
-                SubMenu3.ChangeReservations(activeReservationList, customer);
+                SubMenu3.ChangeReservations(activeReservationList);
             }
 
         } catch (IllegalArgumentException e) {
@@ -60,12 +61,12 @@ public class SubMenu3 {
             invoice.getCustomer().setBalance(invoice.getCustomer().getBalance()
                     + CarCost.totalCharge(invoice.getCar(),invoice.getReservedPeriods().getTotalReservedDays()));
 
-            SubMenu2Choice2.subMenu2Choice2(invoice.getCustomer());
+            SubMenu2Choice2.subMenu2Choice2();
         } else if(userInput.equals("2")) {
             cancelReservation(invoice);
         }
         else {
-            SubMenu2Choice3.subMenu2Choice3(invoice.getCustomer());
+            SubMenu2Choice3.subMenu2Choice3();
         }
     }
 
