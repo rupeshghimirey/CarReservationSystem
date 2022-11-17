@@ -3,6 +3,7 @@ package com.client;
 import com.crs.datahub.InvoiceReservation;
 import com.crs.datahub.Reservation;
 import com.crs.datahub.ReservationList;
+import com.crs.exceptions.InvalidArgumentExceptions;
 import com.crs.models.CarCost;
 
 import java.util.List;
@@ -48,7 +49,7 @@ public class SubMenu3 {
             } else {
                 System.out.println("Selection Out of Range!");
             }
-        } catch (IllegalArgumentException e) {
+        } catch (InvalidArgumentExceptions e) {
             System.out.println("Error: " + e);
         }
 
