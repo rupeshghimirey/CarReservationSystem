@@ -1,25 +1,26 @@
-#CAR RESERVATION SYSTEM (CRS)
+# CAR RESERVATION SYSTEM (CRS)
 
-##Project Description
+## Project Description
 
-###Using our Command-line Interface 
+### Using our Command-line Interface 
 
 - You can view our inventory of cars.
 - You can book, modify, and cancel car reservations.
 - You can add money to your account balance.
 - An invoice will be generated after your transaction.
 
-##Team members of C.A.R
+## Team members of C.A.R
 
 - Rupesh Ghimire
 - Alex Aguilar
 - Chongwei Ma
 
-##Car Rental Reservation Process
+## Car Rental Reservation Process
 
 ![image](./images/CRS_Diagram.PNG)
 
-##User Stories
+## User Stories
+
 - As a user, I want to view the cars available.
 
 ![image](./images/Car_Inventory.PNG)
