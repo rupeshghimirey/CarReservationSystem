@@ -36,6 +36,8 @@ public class SubMenu2Choice3 {
         }
 
         userInterface.userInput();
+
+        MainMenuOption2.mainMenuOption2();
     }
 }
 

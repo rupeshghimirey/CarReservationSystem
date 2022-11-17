@@ -11,10 +11,13 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static com.client.GlobalVariable.currentCustomer;
+
 public class InvoiceReservation {
     // creates newFile with invoice.txt
-    //String userInvoiceString =
-    File newFile = new File("invoice.txt");
+
+    String userName = currentCustomer.getFirstName() + "_" + currentCustomer.getLastName() + "_";
+
     // prints out the output file
     PrintWriter writer;
     Date date = new Date();
@@ -22,11 +25,18 @@ public class InvoiceReservation {
     DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss aa");
 
     // creates constructor with try catch and create newFile
-    public InvoiceReservation() {
+    public InvoiceReservation(Reservation reservation) {
+
+        String reservationInfo = reservation.getCar().getYear() + "_"
+                + reservation.getCar().getMake() + "_"
+                + reservation.getCar().getModel() + "_"
+                + reservation.getReservedPeriods().toString() + "_";
+
+        File newFile = new File(userName + reservationInfo + "_Invoice.txt");
+
         if (!newFile.exists()) {
             try {
                 newFile.createNewFile();
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -39,17 +49,17 @@ public class InvoiceReservation {
     }
 
     // prints out in output file whenever this method is called in CRSClient
-    public void selectCar(Reservation invoice) {
-        double charges = CarCost.totalCharge(invoice.getCar(), invoice.getReservedPeriods().getTotalReservedDays());
+    public void selectCar(Reservation reservation) {
+        double charges = CarCost.totalCharge(reservation.getCar(), reservation.getReservedPeriods().getTotalReservedDays());
 
         writer.println(dateFormat.format(date) + "\n" +
-                invoice.getCustomer().getFirstName() + ", " + invoice.getCustomer().getLastName() +
-                " has reserved a " + invoice.getCar().getMake() + " "+ invoice.getCar().getModel() +
-                "\n" + invoice.getReservedPeriods().toString() +
+                reservation.getCustomer().getFirstName() + ", " + reservation.getCustomer().getLastName() +
+                " has reserved a " + reservation.getCar().getMake() + " "+ reservation.getCar().getModel() +
+                "\n" + reservation.getReservedPeriods().toString() +
                 "\nTotal Charge is: " +charges +
                 "\n");
-                //+ "Car Reservation Done!");
     }
+
     public void inventoryPeeked(Customer customer) {
         writer.println(dateFormat.format(date) + " Inventory is seen by " + customer.getFirstName() +" "+ customer.getLastName()+"!");
     }

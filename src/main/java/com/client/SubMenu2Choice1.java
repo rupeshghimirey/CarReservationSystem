@@ -41,5 +41,8 @@ public class SubMenu2Choice1 {
                 System.out.println("Error: " + e.getMessage());
             }
         }
+
+        System.out.println("Press Any Key to Continue.");
+        userInterface.userInput();
     }
 }

@@ -53,7 +53,6 @@ public class DisplayUsersList {
     }
 
     public static void SwitchUserMenu() throws FileNotFoundException {
-        //globeInitializationStart();
         displayUser();
 
         switchUser(selectOptions());

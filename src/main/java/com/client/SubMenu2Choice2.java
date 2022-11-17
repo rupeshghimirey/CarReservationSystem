@@ -58,11 +58,7 @@ public class SubMenu2Choice2 {
             Reservation newInvoice = new Reservation(currentCustomer,newPeriod1,c);
             ReservationList.addToInvoiceList(newInvoice);
 
-            invoiceReservation.selectCar(newInvoice);
-
             System.out.println(c.getVin() + " " + c.getMake() + " " + c.getModel() + " " + "is successfully reserved!");
-
-            invoiceReservation.closeFile();
 
             currentCustomer.setBalance(currentCustomer.getBalance() - charges);
             System.out.println(currentCustomer.getFirstName() + " " + currentCustomer.getLastName() + " is charged with: $" + charges);
