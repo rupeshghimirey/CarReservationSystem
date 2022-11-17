@@ -2,7 +2,7 @@
 
 ##Project Description
 
-####Using our Command-line Interface: 
+####Using our Command-line Interface 
 
 - You can view our inventory of cars.
 - You can book, modify, and cancel car reservations.
