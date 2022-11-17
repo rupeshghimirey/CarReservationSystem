@@ -26,7 +26,7 @@
 
 - As a user, I want to reserve a car with a start and stop date.
 
--![image](./images/Reserve_Car.png)
+![image](./images/Reserve_Car.png)
 
 
 - As a user, I should be able to make a payment for my reservation
