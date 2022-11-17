@@ -5,7 +5,8 @@
 2. [Team Members](#Team-members-of-C.A.R)
 3. [Car Reservation Process](#Car-Reservation-Process )
 4. [User Stories](#User-Stories)
-5. [Presentation Link](#Presentation-Link)
+5. [UML Diagram](#UML-Diagram)
+6. [Presentation Link](#Presentation-Link)
 
 
 
@@ -46,6 +47,11 @@
 - As a user, I want to view the invoice/bill.
 
 ![image](./images/Invoice.PNG)
+
+## UML Diagram
+
+![image](./images/UML.PNG)
+
 
 ## Presentation Link
 
