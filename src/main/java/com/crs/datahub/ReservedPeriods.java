@@ -1,6 +1,7 @@
 package com.crs.datahub;
 
 import java.sql.Date;
+import java.util.Objects;
 
 public class ReservedPeriods {
     Date startDate;
@@ -46,8 +47,8 @@ public class ReservedPeriods {
 
         ReservedPeriods that = (ReservedPeriods) o;
 
-        if (startDate != null ? !startDate.equals(that.startDate) : that.startDate != null) return false;
-        return endDate != null ? endDate.equals(that.endDate) : that.endDate == null;
+        if (!Objects.equals(startDate, that.startDate)) return false;
+        return Objects.equals(endDate, that.endDate);
     }
 
     @Override

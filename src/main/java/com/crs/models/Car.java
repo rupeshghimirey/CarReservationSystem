@@ -107,7 +107,6 @@ public class Car {
     public void inputPeriod(ReservedPeriods period) {
         if(period == null || period.getStartDate().after(period.getEndDate())) {
             System.out.println("Invalid Input!");
-            //throw new IllegalArgumentException("NUll DATES");
             return;
         }
         periods.add(period);

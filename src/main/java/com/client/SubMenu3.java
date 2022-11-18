@@ -44,7 +44,7 @@ public class SubMenu3 {
         try {
             int index = Integer.parseInt(userInput);
 
-            if(index > 0 && index <= activeReservationList.size()) {
+            if (index > 0 && index <= activeReservationList.size()) {
                 selectedInvoice = ReservationList.getReservationList().get(index - 1);
             } else {
                 System.out.println("Selection Out of Range!");
@@ -60,7 +60,7 @@ public class SubMenu3 {
 
         Reservation selectedInvoice = selectedReservation(activeReservationList, userInput);
 
-        if(selectedInvoice != null) {
+        if (selectedInvoice != null) {
             System.out.println("What Would You Like to Modify:\n" +
                     "1. I want to remake the reservation.\n" +
                     "2. I want to cancel this reservation. (can not be reversed!)\n" +
@@ -76,16 +76,16 @@ public class SubMenu3 {
     }
 
     public static void SelectModification(String userInput, Reservation reservation) {
-        if(userInput.equals("1")) {
-            //Invoice invoiceTemp = reservation;
+        if (userInput.equals("1")) {
 
             ReservationList.removeFromInvoiceList(reservation);
             reservation.getCar().getPeriods().remove(reservation.getReservedPeriods());
             reservation.getCustomer().setBalance(reservation.getCustomer().getBalance()
-                    + CarCost.totalCharge(reservation.getCar(),reservation.getReservedPeriods().getTotalReservedDays()));
+                    + CarCost.totalCharge(reservation.getCar(), reservation.getReservedPeriods().getTotalReservedDays()));
 
             SubMenu2Choice2.subMenu2Choice2();
-        } else if(userInput.equals("2")) {
+
+        } else if (userInput.equals("2")) {
             cancelReservation(reservation);
         }
 
@@ -95,7 +95,7 @@ public class SubMenu3 {
     public static void printInvoices(List<Reservation> activeReservationList, String userInput) {
         Reservation selectedInvoice = selectedReservation(activeReservationList, userInput);
 
-        if(selectedInvoice != null) {
+        if (selectedInvoice != null) {
             try {
                 invoiceReservation = new InvoiceReservation(selectedInvoice);
 
@@ -107,8 +107,7 @@ public class SubMenu3 {
                 System.out.println("Press Any Key to Continue.");
 
                 userInterface.userInput();
-            }
-            catch (IllegalArgumentException e) {
+            } catch (IllegalArgumentException e) {
                 System.out.println("Error: " + e.getMessage());
             }
         } else {
@@ -124,7 +123,7 @@ public class SubMenu3 {
         invoice.getCar().getPeriods().remove(invoice.getReservedPeriods());
 
         invoice.getCustomer().setBalance(invoice.getCustomer().getBalance()
-                + CarCost.totalCharge(invoice.getCar(),invoice.getReservedPeriods().getTotalReservedDays()));
+                + CarCost.totalCharge(invoice.getCar(), invoice.getReservedPeriods().getTotalReservedDays()));
 
         System.out.println("Reservation Cancelled");
     }

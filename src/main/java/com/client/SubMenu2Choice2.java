@@ -5,7 +5,9 @@ import com.crs.datahub.ReservationList;
 import com.crs.datahub.ReservedPeriods;
 import com.crs.models.Car;
 import com.crs.models.CarCost;
-import static com.client.GlobalVariable.*;
+
+import static com.client.GlobalVariable.currentCustomer;
+import static com.client.GlobalVariable.userInterface;
 
 public class SubMenu2Choice2 {
     public static void subMenu2Choice2() {
@@ -56,7 +58,7 @@ public class SubMenu2Choice2 {
         } else {
             c.inputPeriod(newPeriod1);
 
-            Reservation newInvoice = new Reservation(currentCustomer,newPeriod1,c);
+            Reservation newInvoice = new Reservation(currentCustomer, newPeriod1, c);
             ReservationList.addToInvoiceList(newInvoice);
 
             System.out.println(c.getVin() + " " + c.getMake() + " " + c.getModel() + " " + "is successfully reserved!");

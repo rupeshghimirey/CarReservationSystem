@@ -18,8 +18,6 @@ public class CRSClient {
 
             } else if (userInput.equalsIgnoreCase(MAIN_OPTION_2)) {
 
-                //SubMenu2Choice1.subMenu2Choice1();
-
                 DisplayUsersList.SwitchUserMenu();
 
             } else if (userInput.equalsIgnoreCase(MAIN_OPTION_3)) {
@@ -28,8 +26,6 @@ public class CRSClient {
 
             } else if (userInput.equalsIgnoreCase(MAIN_OPTION_4)) {
                 userInterface.thankYouMessage();
-
-                //invoiceReservation.closeFile();//may not be necessary
 
                 break;
             }

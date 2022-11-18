@@ -7,15 +7,13 @@ import java.util.List;
 import java.util.Map;
 
 public interface ICarInventory {
-    public Car findByVin(String vin);
+    Car findByVin(String vin);
 
-    public List<Car> findByCarType(CarType carType);
+    List<Car> findByCarType(CarType carType);
 
-    public List<Car> findAvailableCar(CarType carType);
+    List<Car> findAvailableCar(CarType carType);
 
-    public List<Car> findReservedCar(CarType carType);
+    List<Car> findReservedCar(CarType carType);
 
-    public Map<String, Car> reserveCar(String vin);
-
-
+    Map<String, Car> reserveCar(String vin);
 }

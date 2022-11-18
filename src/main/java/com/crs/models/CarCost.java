@@ -18,9 +18,7 @@ public class CarCost {
     public static double totalCharge(Car car, long numberOfDays) {
         costInitialization();
 
-        double totalCharge = 0.0;
-
-        totalCharge = costChart.get(car.getCarType()) * numberOfDays;
+        double totalCharge = costChart.get(car.getCarType()) * numberOfDays;
 
         return totalCharge;
     }

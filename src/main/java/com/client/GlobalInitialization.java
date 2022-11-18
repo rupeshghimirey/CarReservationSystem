@@ -32,8 +32,6 @@ public class GlobalInitialization {
 
         userInterface = new UserInterface();
 
-        //invoiceReservation = new InvoiceReservation();
-
         currentCustomer = CustomerList.getCustomerList().get(1);
 
     }

@@ -20,7 +20,6 @@ public class UserInterface {
         myScanner = new Scanner(System.in);
 
     }
-    // main menu
 
     private String drawTitle() {
         String title;
@@ -30,7 +29,7 @@ public class UserInterface {
         String drawStar = "";
         String welcomeString = "Welcome to Car Reservation System (CRS), ";
 
-        for(int i=0; i< userNameLength + welcomeString.length(); i++) {
+        for (int i = 0; i < userNameLength + welcomeString.length(); i++) {
             drawStar += "*";
         }
 
@@ -40,9 +39,10 @@ public class UserInterface {
         return title;
     }
 
+    //This is the Main Menu.
     public String printMainMenu() {
         String mainMenuString = drawTitle() +
-                "(1) Display Car Inventory\n"+
+                "(1) Display Car Inventory\n" +
                 "(2) Switch Users\n" +
                 "(3) Make Reservation\n" +
                 "(4) Exit\n" +
@@ -53,7 +53,7 @@ public class UserInterface {
 
     public void getAllCars() {
         CarCost.costInitialization();
-        carInventory.getCarCollections().stream().forEach(c->c.setPricePerDay( CarCost.costChart.get(c.getCarType()) ));
+        carInventory.getCarCollections().stream().forEach(c -> c.setPricePerDay(CarCost.costChart.get(c.getCarType())));
         carInventory.getCarCollections().stream().forEach(System.out::println);
     }
 
@@ -75,7 +75,7 @@ public class UserInterface {
         List<Car> availableCars = carInventory.getCarCollections().stream().filter(
                 car -> {
                     boolean flag = true;
-                    for(ReservedPeriods d : car.getPeriods()) {
+                    for (ReservedPeriods d : car.getPeriods()) {
                         boolean statement1 = d.getStartDate().before(reservedPeriods.getStartDate())
                                 && d.getEndDate().after(reservedPeriods.getStartDate());
 
@@ -87,7 +87,7 @@ public class UserInterface {
                         boolean statement4 = d.getStartDate().equals(reservedPeriods.getEndDate());
                         boolean statement5 = d.getEndDate().equals(reservedPeriods.getStartDate());
 
-                        if(statement1 || statement2 || statement3 || statement4 || statement5) {
+                        if (statement1 || statement2 || statement3 || statement4 || statement5) {
                             flag = false;
                             break;
                         }
@@ -97,8 +97,8 @@ public class UserInterface {
         ).collect(Collectors.toList());
 
         CarCost.costInitialization();
-        carInventory.getCarCollections().stream().forEach(c->
-                c.setPricePerDay( CarCost.costChart.get(c.getCarType())
+        carInventory.getCarCollections().stream().forEach(c ->
+                c.setPricePerDay(CarCost.costChart.get(c.getCarType())
                 ));
 
         return availableCars;
@@ -115,7 +115,7 @@ public class UserInterface {
 
         try {
             int selectInt = Integer.parseInt(selection);
-            if(selectInt < 1 || selectInt > carInventory.getCarCollections().size()) {
+            if (selectInt < 1 || selectInt > carInventory.getCarCollections().size()) {
                 System.out.println("Invalid Input, Selection Out of Range!");
             } else {
                 car = availableCars.get(selectInt - 1);
@@ -123,7 +123,7 @@ public class UserInterface {
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
-        //car.inputPeriod(reservedPeriods);
+
         return car;
     }
 
@@ -134,16 +134,16 @@ public class UserInterface {
         ReservedPeriods newPeriod = new ReservedPeriods(Date.valueOf("0001-01-01"), Date.valueOf("9999-12-31"));
 
         try {
-            startDate = Date.valueOf(startDateString);// need to debug/reformatting
+            startDate = Date.valueOf(startDateString);
             endDate = Date.valueOf(endDateString);
-            if(endDate.before(startDate)) {
-                throw new IllegalArgumentException("Invalid input");
+            if (endDate.before(startDate)) {
+                System.out.println("Invalid Dates!");
             }
 
             newPeriod = new ReservedPeriods(startDate, endDate);
 
-        } catch(IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
         }
 
         return newPeriod;

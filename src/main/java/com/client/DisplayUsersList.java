@@ -10,10 +10,6 @@ import static com.client.GlobalVariable.currentCustomer;
 public class DisplayUsersList {
 
     public static void switchUser(Customer selectedCustomer) {
-//        if(selectedCustomer == null) {
-//            System.out.println("Invalid Selection, No Changes Made!");
-//            return;
-//        }
         currentCustomer = selectedCustomer;
     }
 

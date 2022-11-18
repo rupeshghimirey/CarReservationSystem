@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ReservationList {
 
-    private static List<Reservation> reservationList = new ArrayList<>();
+    private static final List<Reservation> reservationList = new ArrayList<>();
 
     public static List<Reservation> getReservationList() {
         return reservationList;

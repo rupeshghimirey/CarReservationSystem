@@ -10,7 +10,7 @@ public class CarInventory implements ICarInventory {
 
     CarFileReader reader = new CarFileReader();
 
-    private List<Car> carCollections; // = new ArrayList<>();
+    private List<Car> carCollections;
 
     public CarInventory() throws FileNotFoundException {
         carCollections = reader.processCarInventory();

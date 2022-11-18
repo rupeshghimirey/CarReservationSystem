@@ -1,6 +1,7 @@
 package com.client;
 
-import static com.client.GlobalVariable.*;
+import static com.client.GlobalVariable.currentCustomer;
+import static com.client.GlobalVariable.userInterface;
 
 public class SubMenu2Choice1 {
 
@@ -34,7 +35,7 @@ public class SubMenu2Choice1 {
                 } else {
                     currentCustomer.setBalance(currentCustomer.getBalance() + oneTimeDeposit);
 
-                    System.out.println("$ "+ oneTimeDeposit + " is added to your current balance!");
+                    System.out.println("$ " + oneTimeDeposit + " is added to your current balance!");
                     System.out.println("New balance: $" + currentCustomer.getBalance());
                 }
             } catch (IllegalArgumentException e) {
@@ -44,5 +45,6 @@ public class SubMenu2Choice1 {
 
         System.out.println("Press Any Key to Continue.");
         userInterface.userInput();
+        return;
     }
 }
