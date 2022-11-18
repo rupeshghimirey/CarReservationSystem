@@ -33,11 +33,12 @@ public class SubMenu2Choice1 {
                 } else if (oneTimeDeposit <= LOWER_CAP_DEPOSIT) {
                     System.out.println("Not enough deposit made this time.");
                 } else {
-                    currentCustomer.setBalance(currentCustomer.getBalance() + oneTimeDeposit);
-
                     System.out.println("$ " + oneTimeDeposit + " is added to your current balance!");
                     System.out.println("New balance: $" + currentCustomer.getBalance());
                 }
+
+                currentCustomer.setBalance(currentCustomer.getBalance() + oneTimeDeposit);
+
             } catch (IllegalArgumentException e) {
                 System.out.println("Error: " + e.getMessage());
             }
@@ -45,6 +46,5 @@ public class SubMenu2Choice1 {
 
         System.out.println("Press Any Key to Continue.");
         userInterface.userInput();
-        return;
     }
 }

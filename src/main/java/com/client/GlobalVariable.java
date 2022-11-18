@@ -19,7 +19,7 @@ public class GlobalVariable {
 
     public static InvoiceReservation invoiceReservation;
 
-    public static boolean isSubMenu2Choice = true;
+    //public static boolean isSubMenu2Choice = true;
 
     public static Customer currentCustomer;
 }

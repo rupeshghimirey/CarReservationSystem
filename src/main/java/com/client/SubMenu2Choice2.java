@@ -23,7 +23,7 @@ public class SubMenu2Choice2 {
         System.out.println();
         int i = 0;
         for (Car c : userInterface.getAvailableCars(newPeriod1)) {
-            System.out.println(++i + " " + c.toString());
+            System.out.println(++i + ". " + c.toString());
         }
 
         boolean flag = true;
@@ -53,7 +53,6 @@ public class SubMenu2Choice2 {
             System.out.println("Not enough balance on " + currentCustomer.getFirstName() + " " + currentCustomer.getLastName() + " account!");
 
             SubMenu2Choice1.subMenu2Choice1();
-            return;
 
         } else {
             c.inputPeriod(newPeriod1);

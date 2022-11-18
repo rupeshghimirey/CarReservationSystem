@@ -15,10 +15,8 @@ public class UserInterface {
     private Scanner myScanner;
     CarInventory carInventory = new CarInventory();
 
-
     public UserInterface() throws FileNotFoundException {
         myScanner = new Scanner(System.in);
-
     }
 
     private String drawTitle() {

@@ -31,16 +31,11 @@ public class SubMenu2Choice3 {
             }
 
             SubMenu3.ChangeReservations(activeReservationList);
-            return;
+
         } else {
             System.out.println("No Active Reservations. Press Any Key to Continue.");
+            userInterface.userInput();
         }
-
-        System.out.println("Press Any Key to Continue.");
-        userInterface.userInput();
-
-        MainMenuOption2.mainMenuOption2();
-        return;
     }
 }
 

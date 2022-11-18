@@ -32,10 +32,7 @@ public class SubMenu3 {
             userInput = userInterface.userInput();
 
             printInvoices(activeReservationList, userInput);
-        } else {
-            MainMenuOption2.mainMenuOption2();
         }
-        return;
     }
 
     public static Reservation selectedReservation(List<Reservation> activeReservationList, String userInput) {
@@ -70,9 +67,9 @@ public class SubMenu3 {
 
             SelectModification(userInput, selectedInvoice);
         } else {
+
             SubMenu3.ChangeReservations(activeReservationList);
         }
-        return;
     }
 
     public static void SelectModification(String userInput, Reservation reservation) {
@@ -88,8 +85,6 @@ public class SubMenu3 {
         } else if (userInput.equals("2")) {
             cancelReservation(reservation);
         }
-
-        SubMenu2Choice3.subMenu2Choice3();
     }
 
     public static void printInvoices(List<Reservation> activeReservationList, String userInput) {
@@ -113,8 +108,6 @@ public class SubMenu3 {
         } else {
             System.out.println("Invalid Operation, Cannot Print!");
         }
-
-        SubMenu3.ChangeReservations(activeReservationList);
     }
 
     public static void cancelReservation(Reservation invoice) {

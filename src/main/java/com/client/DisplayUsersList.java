@@ -9,11 +9,11 @@ import static com.client.GlobalVariable.currentCustomer;
 
 public class DisplayUsersList {
 
-    public static void switchUser(Customer selectedCustomer) {
+    private static void switchUser(Customer selectedCustomer) {
         currentCustomer = selectedCustomer;
     }
 
-    public static Customer selectOptions() {
+    private static Customer selectOptions() {
         Customer selectedCustomer = currentCustomer;
 
         System.out.println("Please Select The Index of User You Want to Switch Into:");
@@ -42,7 +42,7 @@ public class DisplayUsersList {
         return selectedCustomer;
     }
 
-    public static void displayUser() {
+    private static void displayUser() {
         CustomerList customerList = new CustomerList();
         System.out.println("Currently Logged in as: " + currentCustomer.getFirstName() + "\n");
         System.out.println(customerList.toString());
