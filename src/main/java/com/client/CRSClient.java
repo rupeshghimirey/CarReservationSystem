@@ -29,7 +29,7 @@ public class CRSClient {
             } else if (userInput.equalsIgnoreCase(MAIN_OPTION_4)) {
                 userInterface.thankYouMessage();
 
-                invoiceReservation.closeFile();//may not be necessary
+                //invoiceReservation.closeFile();//may not be necessary
 
                 break;
             }

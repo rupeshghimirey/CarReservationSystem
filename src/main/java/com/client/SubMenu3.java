@@ -32,10 +32,10 @@ public class SubMenu3 {
             userInput = userInterface.userInput();
 
             printInvoices(activeReservationList, userInput);
-
         } else {
             MainMenuOption2.mainMenuOption2();
         }
+        return;
     }
 
     public static Reservation selectedReservation(List<Reservation> activeReservationList, String userInput) {
@@ -72,6 +72,7 @@ public class SubMenu3 {
         } else {
             SubMenu3.ChangeReservations(activeReservationList);
         }
+        return;
     }
 
     public static void SelectModification(String userInput, Reservation reservation) {
@@ -99,21 +100,22 @@ public class SubMenu3 {
                 invoiceReservation = new InvoiceReservation(selectedInvoice);
 
                 invoiceReservation.selectCar(selectedInvoice);
+
                 invoiceReservation.closeFile();
 
                 System.out.println("Selected Invoice Printed Successfully.");
                 System.out.println("Press Any Key to Continue.");
 
                 userInterface.userInput();
-                SubMenu3.ChangeReservations(activeReservationList);
             }
             catch (IllegalArgumentException e) {
                 System.out.println("Error: " + e.getMessage());
             }
         } else {
             System.out.println("Invalid Operation, Cannot Print!");
-            SubMenu3.ChangeReservations(activeReservationList);
         }
+
+        SubMenu3.ChangeReservations(activeReservationList);
     }
 
     public static void cancelReservation(Reservation invoice) {

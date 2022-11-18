@@ -10,11 +10,8 @@ public class MainMenuOption1 {
         System.out.println();
         System.out.println();
         userInterface.getAllCars();
-//        try {
-//            invoiceReservation.inventoryPeeked(currentCustomer);
-//        }
-//        catch (IllegalArgumentException e) {
-//            System.out.println("Error: " + e.getMessage());
-//        }
+
+        System.out.println("Press Any Key to Continue.");
+        userInterface.userInput();
     }
 }

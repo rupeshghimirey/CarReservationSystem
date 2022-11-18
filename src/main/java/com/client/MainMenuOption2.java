@@ -24,7 +24,9 @@ public class MainMenuOption2 {
 
                 isSubMenu2Choice = false;
             } else if (subMenu2Choice.equals(SUB_OPTION_4)) {
+
                 isSubMenu2Choice = false;
+                break;
             }
         }
     }
